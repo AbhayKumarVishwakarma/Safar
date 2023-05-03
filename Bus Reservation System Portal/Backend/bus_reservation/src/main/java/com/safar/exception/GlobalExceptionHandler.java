@@ -27,4 +27,15 @@ public class GlobalExceptionHandler {
         details.setDetails(m.getBindingResult().getFieldError().getDefaultMessage());
         return new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(ReservationException.class)
+    public ResponseEntity<MyErrorDetails> reservationExceptionHandler(ReservationException ex, WebRequest w){
+        MyErrorDetails details = new MyErrorDetails();
+
+        details.setTime(LocalDateTime.now());
+        details.setMessage(ex.getMessage());
+        details.setDetails(w.getDescription(false));
+
+        return  new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
+    }
 }
