@@ -25,7 +25,7 @@ public class ReservationController {
         return new ResponseEntity<>(reservation1, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update")
+    @PutMapping("/update/{rid}")
     public ResponseEntity<Reservation> updateReservation(@Valid @RequestBody Reservation reservation, @PathVariable Integer rid) throws ReservationException {
         Reservation reservation1 = service.updateReservation(reservation, rid);
 
@@ -33,5 +33,10 @@ public class ReservationController {
     }
 
 
+    @GetMapping("/getById/{rid}")
+    public ResponseEntity<Reservation> getReservationById(@PathVariable Integer rid) throws ReservationException {
+        Reservation reservation = service.viewReservation(rid);
 
+        return  new ResponseEntity<>(reservation, HttpStatus.FOUND);
+    }
 }
