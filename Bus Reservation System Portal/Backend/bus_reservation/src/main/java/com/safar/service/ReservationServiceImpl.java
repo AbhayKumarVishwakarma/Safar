@@ -49,12 +49,21 @@ public class ReservationServiceImpl implements ReservationService{
 
     @Override
     public Reservation viewReservation(int rid) {
-        return null;
+        Optional<Reservation> optional = repository.findById(rid);
+
+        if(optional.isEmpty()) System.out.println();
+
+        return optional.get();
     }
 
     @Override
     public List<Reservation> viewAllReservation() {
-        return null;
+
+        List<Reservation> list = repository.findAll();
+
+        if(list == null) System.out.println();
+
+        return list;
     }
 
     @Override
