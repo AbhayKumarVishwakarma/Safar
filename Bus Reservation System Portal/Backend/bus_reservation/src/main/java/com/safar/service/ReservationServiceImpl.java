@@ -1,5 +1,6 @@
 package com.safar.service;
 
+import com.safar.exception.ReservationException;
 import com.safar.model.Reservation;
 import com.safar.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +21,10 @@ public class ReservationServiceImpl implements ReservationService{
     }
 
     @Override
-    public Reservation updateReservation(Reservation reservation, Integer rid) {
+    public Reservation updateReservation(Reservation reservation, Integer rid) throws ReservationException {
         Optional<Reservation> optional = repository.findById(rid);
 
-        if(optional.isEmpty()) System.out.println();
+        if(optional.isEmpty()) throw new ReservationException("Reservation not found with given id: " + rid);
 
         Reservation reservation1 = optional.get();
 
@@ -35,11 +36,11 @@ public class ReservationServiceImpl implements ReservationService{
     }
 
     @Override
-    public Reservation deleteReservation(int rid) {
+    public Reservation deleteReservation(int rid) throws ReservationException {
 
         Optional<Reservation> optional = repository.findById(rid);
 
-        if (optional.isEmpty()) System.out.println();
+        if (optional.isEmpty()) throw new ReservationException("Reservation not found with given id: " + rid);
 
         Reservation reservation = optional.get();
         repository.delete(reservation);
@@ -48,26 +49,31 @@ public class ReservationServiceImpl implements ReservationService{
     }
 
     @Override
-    public Reservation viewReservation(int rid) {
+    public Reservation viewReservation(int rid) throws ReservationException {
         Optional<Reservation> optional = repository.findById(rid);
 
-        if(optional.isEmpty()) System.out.println();
+        if(optional.isEmpty()) throw new ReservationException("Reservation not found with given id: " + rid);
 
         return optional.get();
     }
 
     @Override
-    public List<Reservation> viewAllReservation() {
+    public List<Reservation> viewAllReservation() throws ReservationException {
 
         List<Reservation> list = repository.findAll();
 
-        if(list == null) System.out.println();
+        if(list == null) throw new ReservationException("Reservation not found");
 
         return list;
     }
 
     @Override
-    public List<Reservation> getAllReservation(LocalDate date) {
+    public List<Reservation> getAllReservation(LocalDate date) throws ReservationException {
+
+        List<Reservation> list = repository.findByReservationDate(date);
+
+        if(list == null) throw new ReservationException("Reservation not found with given data: " + date);
+
         return null;
     }
 }
