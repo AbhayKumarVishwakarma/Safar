@@ -41,9 +41,10 @@ public class ReservationServiceImpl implements ReservationService{
 
         if (optional.isEmpty()) System.out.println();
 
+        Reservation reservation = optional.get();
+        repository.delete(reservation);
 
-
-        return null;
+        return reservation;
     }
 
     @Override
