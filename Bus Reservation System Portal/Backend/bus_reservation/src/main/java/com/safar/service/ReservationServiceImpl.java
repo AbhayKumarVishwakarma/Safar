@@ -28,7 +28,7 @@ public class ReservationServiceImpl implements ReservationService{
     @Override
     public Reservation addReservation(ReservationDTO dto, String key) throws ReservationException {
 
-//        CurrentUserSession userSession = ;
+        CurrentUserSession userSession = ;
 
           Reservation reservation = new Reservation();
 
