@@ -27,4 +27,20 @@ public class GlobalExceptionHandler {
         details.setDetails(m.getBindingResult().getFieldError().getDefaultMessage());
         return new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
     }
+    @ExceptionHandler(AdminException.class)
+    public ResponseEntity<MyErrorDetails> exceptionHandler2(AdminException e, WebRequest w){
+        MyErrorDetails details = new MyErrorDetails();
+        details.setTime(LocalDateTime.now());
+        details.setMessage(e.getMessage());
+        details.setDetails(w.getDescription(false));
+        return new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
+    }
+    @ExceptionHandler(LoginException.class)
+    public ResponseEntity<MyErrorDetails> exceptionHandler4(LoginException e, WebRequest w){
+        MyErrorDetails details = new MyErrorDetails();
+        details.setTime(LocalDateTime.now());
+        details.setMessage(e.getMessage());
+        details.setDetails(w.getDescription(false));
+        return new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
+    }
 }
