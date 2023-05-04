@@ -1,12 +1,16 @@
 package com.safar.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Reservation {
     @Id
@@ -15,6 +19,7 @@ public class Reservation {
     private String status;
     private LocalDate date;
     private LocalTime time;
+
     private String source;
     private String destination;
     private LocalDate journeyDate;
