@@ -27,4 +27,11 @@ public class GlobalExceptionHandler {
         details.setDetails(m.getBindingResult().getFieldError().getDefaultMessage());
         return new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
     }
+
+    //Handling the busException here
+    @ExceptionHandler(BusException.class)
+    public ResponseEntity<MyErrorDetails> busException(BusException busEx, WebRequest webReq){
+        MyErrorDetails error = new MyErrorDetails(LocalDateTime.now(),busEx.getMessage(),webReq.getDescription(false));
+        return new ResponseEntity<>(error,HttpStatus.BAD_REQUEST);
+    }
 }
