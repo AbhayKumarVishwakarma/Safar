@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ReservationServiceImpl implements ReservationService{
@@ -49,4 +51,43 @@ public class ReservationServiceImpl implements ReservationService{
 
         return reservationRepository.save(reservation);
     }
+
+    @Override
+    public Reservation viewReservation(Integer rid, String key) throws ReservationException {
+
+        Optional<Reservation> optional = reservationRepository.findById(rid);
+
+        if(optional.isEmpty()) throw new ReservationException("Reservation with given id is not found");
+
+        return null;
+    }
+
+    @Override
+    public List<Reservation> getAllReservation(String key) throws ReservationException {
+
+
+        List<Reservation> list = reservationRepository.findAll();
+
+        if(list == null) throw new ReservationException("Reservation Not found");
+
+        return list;
+    }
+
+    @Override
+    public List<Reservation> viewReservationByUerId(Integer uid, String key) {
+
+        return null;
+    }
+
+    @Override
+    public Reservation deleteReservation(Integer rid, String key) {
+        return null;
+    }
+
+    @Override
+    public Reservation updateReservation(ReservationDTO dto, String key) {
+        return null;
+    }
+
+
 }
