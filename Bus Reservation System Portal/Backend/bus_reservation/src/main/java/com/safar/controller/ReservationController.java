@@ -27,15 +27,15 @@ public class ReservationController {
         return  new ResponseEntity<>(reservation, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update/{key}")
-    public ResponseEntity<Reservation> updateReservation(@Valid @RequestBody ReservationDTO dto, @PathVariable String key){
-        Reservation reservation = service.updateReservation(dto, key);
+    @PutMapping("/update/{rid}/{key}")
+    public ResponseEntity<Reservation> updateReservation(@Valid @RequestBody ReservationDTO dto, @PathVariable String key, @PathVariable Integer rid) throws ReservationException{
+        Reservation reservation = service.updateReservation(rid, dto, key);
 
         return  new ResponseEntity<>(reservation, HttpStatus.OK);
     }
 
     @DeleteMapping("delete/{key}/{rid}")
-    public ResponseEntity<Reservation> deleteReservation(@PathVariable String key, @PathVariable Integer rid){
+    public ResponseEntity<Reservation> deleteReservation(@PathVariable String key, @PathVariable Integer rid) throws ReservationException{
         Reservation reservation = service.deleteReservation(rid, key);
 
         return new ResponseEntity<>(reservation, HttpStatus.ACCEPTED);
@@ -56,7 +56,7 @@ public class ReservationController {
     }
 
     @GetMapping("/userId/{uid}/{key}")
-    public ResponseEntity<List<Reservation>> viewReservationsByUserId(@PathVariable Integer uid, @PathVariable String key){
+    public ResponseEntity<List<Reservation>> viewReservationsByUserId(@PathVariable Integer uid, @PathVariable String key) throws ReservationException{
         List<Reservation> reservations = service.viewReservationByUerId(uid, key);
 
         return  new ResponseEntity<>(reservations, HttpStatus.FOUND);
