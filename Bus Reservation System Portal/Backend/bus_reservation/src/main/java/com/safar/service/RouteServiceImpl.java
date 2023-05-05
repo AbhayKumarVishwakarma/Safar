@@ -1,4 +1,4 @@
 package com.safar.service;
 
-public class RouteServiceImpl implements ReservationService{
+public class RouteServiceImpl implements RouteService{
 }
