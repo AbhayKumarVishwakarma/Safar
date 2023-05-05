@@ -13,4 +13,5 @@ import java.util.List;
 public interface BusRepository extends JpaRepository<Bus,Integer> {
    public List<Bus> findByBusType(String busType);
 
+   public Bus findByRouteFromAndRouteTo(String routeFrom, String routeTo);
 }
