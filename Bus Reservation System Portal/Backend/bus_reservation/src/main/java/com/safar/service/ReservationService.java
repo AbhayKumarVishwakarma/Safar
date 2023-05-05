@@ -15,9 +15,9 @@ public interface ReservationService {
 
     public List<Reservation> getAllReservation(String key) throws ReservationException;
 
-    public List<Reservation> viewReservationByUerId(Integer uid, String key);
+    public List<Reservation> viewReservationByUerId(Integer uid, String key) throws ReservationException;
 
-    public Reservation deleteReservation(Integer rid, String key);
+    public Reservation deleteReservation(Integer rid, String key) throws ReservationException;
 
-    public Reservation updateReservation(ReservationDTO dto, String key);
+    public Reservation updateReservation(Integer rid, ReservationDTO dto, String key) throws ReservationException;
 }
