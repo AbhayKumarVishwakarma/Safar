@@ -1,5 +1,6 @@
 package com.safar.controller;
 
+import com.safar.exception.AdminException;
 import com.safar.exception.BusException;
 import com.safar.model.Bus;
 import com.safar.service.BusService;
@@ -20,7 +21,7 @@ public class BusController {
     //admin endpoints
 
     @PostMapping("/buses/admin")
-    public ResponseEntity<Bus> addBusHandler(@Valid @RequestBody Bus bus, String key)throws BusException {
+    public ResponseEntity<Bus> addBusHandler(@Valid @RequestBody Bus bus,@RequestParam(required = false) String key)throws BusException , AdminException {
 
         Bus newBus = busServ.addBus(bus,key);
         return new ResponseEntity<>(newBus, HttpStatus.CREATED);
@@ -28,11 +29,16 @@ public class BusController {
 
     }
 
+    @PutMapping("/buses/admin")
+    public ResponseEntity<Bus> updateBusHandler(@Valid @RequestBody Bus bus, String key) throws BusException, AdminException{
+        Bus newBus = busServ.updateBus(bus,key);
+        return new ResponseEntity<>(newBus,HttpStatus.OK);
+    }
 
 
 
     @DeleteMapping("/buses/admin/{busId}")
-    public ResponseEntity<Bus> deleteBusByBusIdHandler(@PathVariable("busId") Integer busId, String key) throws BusException{
+    public ResponseEntity<Bus> deleteBusByBusIdHandler(@PathVariable("busId") Integer busId, String key) throws BusException, AdminException{
         Bus deletedBus = busServ.deleteBus(busId,key);
         return new ResponseEntity<>(deletedBus,HttpStatus.OK);
     }
