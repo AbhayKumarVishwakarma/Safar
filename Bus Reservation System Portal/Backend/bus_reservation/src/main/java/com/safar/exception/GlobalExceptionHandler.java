@@ -19,6 +19,7 @@ public class GlobalExceptionHandler {
         details.setDetails(w.getDescription(false));
         return new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
     }
+    
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<MyErrorDetails> exceptionHandler1(MethodArgumentNotValidException m){
         MyErrorDetails details = new MyErrorDetails();
@@ -27,6 +28,14 @@ public class GlobalExceptionHandler {
         details.setDetails(m.getBindingResult().getFieldError().getDefaultMessage());
         return new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
     }
+
+    //Handling the busException here
+    @ExceptionHandler(BusException.class)
+    public ResponseEntity<MyErrorDetails> busException(BusException busEx, WebRequest webReq){
+        MyErrorDetails error = new MyErrorDetails(LocalDateTime.now(),busEx.getMessage(),webReq.getDescription(false));
+        return new ResponseEntity<>(error,HttpStatus.BAD_REQUEST);
+    }
+    
     @ExceptionHandler(AdminException.class)
     public ResponseEntity<MyErrorDetails> exceptionHandler2(AdminException e, WebRequest w){
         MyErrorDetails details = new MyErrorDetails();
@@ -35,6 +44,7 @@ public class GlobalExceptionHandler {
         details.setDetails(w.getDescription(false));
         return new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
     }
+    
     @ExceptionHandler(LoginException.class)
     public ResponseEntity<MyErrorDetails> exceptionHandler4(LoginException e, WebRequest w){
         MyErrorDetails details = new MyErrorDetails();
@@ -42,6 +52,7 @@ public class GlobalExceptionHandler {
         details.setMessage(e.getMessage());
         details.setDetails(w.getDescription(false));
         return new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
+
     }
 
     @ExceptionHandler

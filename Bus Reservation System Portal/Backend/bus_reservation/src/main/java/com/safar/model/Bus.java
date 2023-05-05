@@ -2,6 +2,7 @@ package com.safar.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -32,4 +33,6 @@ public class Bus {
     @JsonIgnore
     @OneToMany(mappedBy = "bus")
     private List<Reservation> reservationList = new ArrayList<>();
+
 }
+
