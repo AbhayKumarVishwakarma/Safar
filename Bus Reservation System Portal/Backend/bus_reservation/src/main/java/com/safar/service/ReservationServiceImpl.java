@@ -2,8 +2,7 @@ package com.safar.service;
 
 import com.safar.exception.ReservationException;
 import com.safar.model.*;
-import com.safar.repository.ReservationRepository;
-import com.safar.repository.UserRepository;
+import com.safar.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,18 +18,21 @@ public class ReservationServiceImpl implements ReservationService{
     private ReservationRepository reservationRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    private AdminRepository adminRepository;
 
     @Autowired
-    private CurrentAdminSession currentAdminSession;
+    private CurrentAdminSessionRepository currentAdminSessionRepository;
+
+//    @Autowired
+//    private ;
 
     @Autowired
-    private BusService busService;
+    private BusRepository busRepository;
 
     @Override
     public Reservation addReservation(ReservationDTO dto, String key) throws ReservationException {
 
-//        CurrentUserSession userSession = ;
+//        CurrentUserSession userSession = currentUserSession.
 
           Reservation reservation = new Reservation();
 
@@ -65,6 +67,9 @@ public class ReservationServiceImpl implements ReservationService{
     @Override
     public List<Reservation> getAllReservation(String key) throws ReservationException {
 
+        CurrentAdminSession session = currentAdminSessionRepository.findByaid(key);
+
+        if(session == null) throw new ReservationException("Please provide valid admin login key");
 
         List<Reservation> list = reservationRepository.findAll();
 
