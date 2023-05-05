@@ -7,5 +7,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface ReservationService {
-    public Reservation addReservation(ReservationDTO dto, String key) throws ReservationException;
+//    public Reservation addReservation(ReservationDTO dto, String key) throws ReservationException;
 }

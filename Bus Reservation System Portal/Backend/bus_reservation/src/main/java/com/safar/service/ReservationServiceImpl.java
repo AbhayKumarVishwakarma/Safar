@@ -16,37 +16,38 @@ public class ReservationServiceImpl implements ReservationService{
     @Autowired
     private ReservationRepository reservationRepository;
 
-    @Autowired
-    private UserRepository userRepository;
+//    @Autowired
+//    private UserRepository userRepository;
+//
+//    @Autowired
+//    private CurrentAdminSession currentAdminSession;
+//
+//    @Autowired
+//    private BusService busService;
 
-    @Autowired
-    private CurrentAdminSession currentAdminSession;
+//    @Override
+//    public Reservation addReservation(ReservationDTO dto, String key) throws ReservationException {
 
-    @Autowired
-    private BusService busService;
+//        CurrentUserSession userSession = ;
+//
+//          Reservation reservation = new Reservation();
+//
+//          if(dto.getJourneyDate().isBefore(LocalDate.now())) throw  new ReservationException("Journey Date should be in Future");
+//
+//
+//
+//          reservation.setSource(dto.getSource());
+//          reservation.setDestination(dto.getDestination());
+//          reservation.setDate(dto.getJourneyDate());
+//          reservation.setStatus("Successful");
+//          reservation.setDate(LocalDate.now());
+//          reservation.setTime(LocalTime.now());
+//          reservation.setBus(null);
+//          reservation.setFare(null);
+//          reservation.setBookedSeat(dto.getBookedSeat());
+//          reservation.setUser(null);
+//
+//        return reservationRepository.save(reservation);
+//    }
 
-    @Override
-    public Reservation addReservation(ReservationDTO dto, String key) throws ReservationException {
-
-        CurrentUserSession userSession = ;
-
-          Reservation reservation = new Reservation();
-
-          if(dto.getJourneyDate().isBefore(LocalDate.now())) throw  new ReservationException("Journey Date should be in Future");
-
-
-
-          reservation.setSource(dto.getSource());
-          reservation.setDestination(dto.getDestination());
-          reservation.setDate(dto.getJourneyDate());
-          reservation.setStatus("Successful");
-          reservation.setDate(LocalDate.now());
-          reservation.setTime(LocalTime.now());
-          reservation.setBus(null);
-          reservation.setFare(null);
-          reservation.setBookedSeat(dto.getBookedSeat());
-          reservation.setUser(null);
-
-        return reservationRepository.save(reservation);
-    }
 }
