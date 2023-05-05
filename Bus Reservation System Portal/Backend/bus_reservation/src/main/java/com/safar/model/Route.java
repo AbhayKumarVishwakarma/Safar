@@ -1,5 +1,9 @@
 package com.safar.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
