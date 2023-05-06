@@ -31,14 +31,15 @@ public class Route {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer routeID;
+
     @NotNull(message = "Start point cannot be null !")
 	@NotBlank(message = "Start point cannot be blank !")
-	@NotEmpty(message="Start point cannot be empty !")
+	@NotEmpty(message = "Start point cannot be empty !")
     private String routeFrom;
 
 	@NotNull(message = "Destination point cannot be null !")
 	@NotBlank(message = "Destination point cannot be blank !")
-	@NotEmpty(message="Destination point cannot be empty !")
+	@NotEmpty(message = "Destination point cannot be empty !")
     private String routeTo;
     private Integer distance;
 

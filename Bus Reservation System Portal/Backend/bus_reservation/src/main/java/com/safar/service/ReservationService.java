@@ -1,6 +1,7 @@
 package com.safar.service;
 
 import com.safar.exception.ReservationException;
+import com.safar.exception.UserException;
 import com.safar.model.Reservation;
 import com.safar.model.ReservationDTO;
 import org.springframework.stereotype.Service;

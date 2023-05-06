@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="./src/styles/payment.css">
+</head>
+
+<body>
+
+    <div id="main">
+        <div id="img_div">
+            <h3>Payment Method</h3>
+            <div>
+                <div><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpNDXCJLASya3auOqaTeXSIp_QkY73hNXf5A&usqp=CAU"
+                        alt="pay"></div>
+                <div><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1CefFQibodbtysbX6PStx8gLRhlPgfMoLlA&usqp=CAU"
+                        alt=""></div>
+            </div>
+        </div>
+
+        <div id="input_div">
+            <form>
+                <p>Cardholder name</p>
+                <input type="text" required>
+                <p>Debit card number</p>
+                <input type="number" required id="card_number">
+                <p>CVV</p>
+                <input id="cvv" type="number" required>
+                <p>Expiry date</p>
+                <input type="date" name="" id="" required>
+                <br>
+                <br>
+                <br>
+                <input type="submit" value="submit" id="button">
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script src="./src/scripts/payment.js"></script>

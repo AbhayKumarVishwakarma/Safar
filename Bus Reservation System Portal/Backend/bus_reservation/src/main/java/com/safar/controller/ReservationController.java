@@ -15,48 +15,48 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/safar/reservation")
+@RequestMapping("/safar")
 public class ReservationController {
     @Autowired
     private ReservationService service;
 
-    @PostMapping("/add/{key}")
-    public ResponseEntity<Reservation> addReservation(@Valid @RequestBody ReservationDTO dto, @PathVariable String key) throws ReservationException {
+    @PostMapping("/user/reservation/add")
+    public ResponseEntity<Reservation> addReservation(@Valid @RequestBody ReservationDTO dto, @RequestParam(required = false) String key) throws ReservationException {
         Reservation reservation = service.addReservation(dto, key);
 
         return  new ResponseEntity<>(reservation, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update/{rid}/{key}")
-    public ResponseEntity<Reservation> updateReservation(@Valid @RequestBody ReservationDTO dto, @PathVariable String key, @PathVariable Integer rid) throws ReservationException{
+    @PutMapping("/user/reservation/update/{rid}")
+    public ResponseEntity<Reservation> updateReservation(@Valid @RequestBody ReservationDTO dto, @RequestParam(required = false) String key, @PathVariable Integer rid) throws ReservationException{
         Reservation reservation = service.updateReservation(rid, dto, key);
 
         return  new ResponseEntity<>(reservation, HttpStatus.OK);
     }
 
-    @DeleteMapping("delete/{key}/{rid}")
-    public ResponseEntity<Reservation> deleteReservation(@PathVariable String key, @PathVariable Integer rid) throws ReservationException{
+    @DeleteMapping("/user/reservation/delete/{rid}")
+    public ResponseEntity<Reservation> deleteReservation( @RequestParam(required = false) String key, @PathVariable Integer rid) throws ReservationException{
         Reservation reservation = service.deleteReservation(rid, key);
 
         return new ResponseEntity<>(reservation, HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("/reservations/{rid}/{key}")
-    public ResponseEntity<Reservation> viewReservationById(@PathVariable Integer rid, @PathVariable String key) throws ReservationException {
+    @GetMapping("/reservation/{rid}")
+    public ResponseEntity<Reservation> viewReservationById(@PathVariable Integer rid, @RequestParam(required = false) String key) throws ReservationException {
         Reservation reservation = service.viewReservation(rid, key);
         
         return new ResponseEntity<>(reservation, HttpStatus.FOUND);
     }
 
-    @GetMapping("/reservations/{key}")
-    public ResponseEntity<List<Reservation>> viewAllReservation(@PathVariable String key) throws ReservationException {
+    @GetMapping("/reservation/all")
+    public ResponseEntity<List<Reservation>> viewAllReservation(@RequestParam(required = false) String key) throws ReservationException {
         List<Reservation> reservations = service.getAllReservation(key);
 
         return new ResponseEntity<>(reservations, HttpStatus.FOUND);
     }
 
-    @GetMapping("/userId/{uid}/{key}")
-    public ResponseEntity<List<Reservation>> viewReservationsByUserId(@PathVariable Integer uid, @PathVariable String key) throws ReservationException{
+    @GetMapping("/user/reservation/{uid}")
+    public ResponseEntity<List<Reservation>> viewReservationsByUserId(@PathVariable Integer uid, @RequestParam(required = false) String key) throws ReservationException{
         List<Reservation> reservations = service.viewReservationByUerId(uid, key);
 
         return  new ResponseEntity<>(reservations, HttpStatus.FOUND);

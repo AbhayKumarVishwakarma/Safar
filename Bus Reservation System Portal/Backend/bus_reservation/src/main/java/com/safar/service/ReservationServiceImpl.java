@@ -2,6 +2,7 @@
 package com.safar.service;
 
 import com.safar.exception.ReservationException;
+import com.safar.exception.UserException;
 import com.safar.model.*;
 import com.safar.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,8 +75,6 @@ public class ReservationServiceImpl implements ReservationService{
           reservation.setFare(bus.getFare());
           reservation.setBookedSeat(dto.getBookedSeat());
           reservation.setUser(user);
-          
-          
 
         return reservationRepository.save(reservation);
     }
@@ -119,9 +118,9 @@ public class ReservationServiceImpl implements ReservationService{
     	
     	CurrentUserSession currentUserSession = currentUserSessionRepository.findByUuid(key);
     	
-    	if(currentAdminSession == null) throw new ReservationException("Invalid admin login key");
+    	if(currentAdminSession == null || currentUserSession == null) throw new ReservationException("Invalid login key");
     	
-    	if(currentUserSession == null) throw new ReservationException("Invalid user login key");
+//    	if(currentUserSession == null) throw new ReservationException("Invalid user login key");
     	
     	Optional<User> optional = userRepository.findById(uid);
     	
@@ -133,12 +132,11 @@ public class ReservationServiceImpl implements ReservationService{
     	
     	if(reservations.isEmpty()) throw new ReservationException("Reservation not found for this user");
 
-    	
         return reservations;
     }
 
     @Override
-    public Reservation deleteReservation(Integer rid, String key) throws ReservationException {
+    public Reservation deleteReservation(Integer rid, String key) throws ReservationException{
     	
     	CurrentUserSession currentUserSession = currentUserSessionRepository.findByUuid(key);
     	
@@ -149,7 +147,7 @@ public class ReservationServiceImpl implements ReservationService{
     	if(optional.isEmpty()) throw new ReservationException("Reservation not found with the given id: " + rid);
     	
     	Reservation reservation = optional.get();
-    	
+
         reservationRepository.delete(reservation);
         
         return reservation;
