@@ -51,13 +51,13 @@ public class ReservationServiceImpl implements ReservationService{
         
         if(bus == null) throw new ReservationException("Bus not found for the given starting to destination");
         
-        Integer availableSeats = bus.getAvailableSeat();
+        Integer availableSeats = bus.getAvailableSeats();
         
         if(availableSeats < dto.getBookedSeat()) throw new ReservationException("Only " + availableSeats + " seats are available");
         
         availableSeats -= dto.getBookedSeat();
         
-        bus.setAvailableSeat(availableSeats);
+        bus.setAvailableSeats(availableSeats);
         
           Reservation reservation = new Reservation();
 
@@ -164,13 +164,13 @@ public class ReservationServiceImpl implements ReservationService{
         
         if(bus == null) throw new ReservationException("Bus not found for the given starting to destination");
         
-        Integer availableSeats = bus.getAvailableSeat();
+        Integer availableSeats = bus.getAvailableSeats();
         
         if(availableSeats < dto.getBookedSeat()) throw new ReservationException("Only " + availableSeats + " seats are available");
         
         availableSeats -= dto.getBookedSeat();
         
-        bus.setAvailableSeat(availableSeats);
+        bus.setAvailableSeats(availableSeats);
         
         Optional<Reservation> optional = reservationRepository.findById(rid);
         
