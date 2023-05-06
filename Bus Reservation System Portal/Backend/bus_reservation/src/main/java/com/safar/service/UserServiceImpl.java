@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User createUser(User user) throws UserException {
-        User registeredUser = userRepository.findByEmail(user.getMobil());
+        User registeredUser = userRepository.findByEmail(user.getMobile());
         if(registeredUser != null) throw new UserException("User is already registered!");
         return userRepository.save(user);
     }

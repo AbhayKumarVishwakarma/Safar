@@ -1,0 +1,62 @@
+body {
+    font-family: sans-serif;
+    background-color: floralwhite;
+}
+
+#main {
+    width: 400px;
+    margin: 70px auto auto;
+    border: 2px solid rgb(206, 177, 177);
+    background-color: white;
+    padding: 0px 15px;
+}
+
+#img_div>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#img_div>div div {
+    width: 48%;
+    border: 1px solid rgb(197, 191, 191);
+    border-radius: 7px;
+}
+
+#img_div>div div:nth-child(2) {
+    border: 2px solid rgb(75, 72, 72);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#img_div img {
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+#input_div {
+    margin: 10px 0px;
+}
+
+#input_div input {
+    margin: -17px 0px 0px;
+    padding: 7px;
+    font-size: x-large;
+}
+
+input:not(:last-child){
+    width: 90%;
+}
+#cvv{
+    width: 20%;
+}
+
+#button{
+    margin: 10px 0px;
+    width: 100%;
+    padding: 7px;
+    font-size: x-large;
+    background-color: rgb(31, 207, 72);
+    color: white;
+    border: 0px;
+}

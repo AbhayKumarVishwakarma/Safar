@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/safar")
 public class UserController {
 
@@ -31,19 +32,19 @@ public class UserController {
         return new ResponseEntity<User>(updatedUser, HttpStatus.OK);
     }
 
-    @DeleteMapping("/user/delete/{userId}/admin")
+    @DeleteMapping("/admin/user/delete/{userId}")
     public  ResponseEntity<User> deleteUser(@PathVariable("userId") Integer userId, @RequestParam(required = false) String key) throws UserException, AdminException {
         User deletedUser= userService.deleteUser(userId, key);
         return new ResponseEntity<User>(deletedUser, HttpStatus.OK);
     }
 
-    @GetMapping("/user/{userId}/admin")
+    @GetMapping("/admin/user/{userId}")
     public  ResponseEntity<User> viewUserById(@PathVariable("userId") Integer userId, @RequestParam(required = false) String key) throws UserException, AdminException {
         User user= userService.viewUserById(userId, key);
         return new ResponseEntity<User>(user, HttpStatus.FOUND);
     }
 
-    @GetMapping("/user/all/admin")
+    @GetMapping("/admin/user/all")
     public  ResponseEntity<List<User>> viewAllUser(@RequestParam(required = false) String key) throws UserException, AdminException {
         List<User> list = userService.viewAllUser(key);
         return new ResponseEntity<List<User>>(list, HttpStatus.OK);

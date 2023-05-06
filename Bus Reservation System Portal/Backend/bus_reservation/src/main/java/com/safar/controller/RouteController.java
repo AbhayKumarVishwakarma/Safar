@@ -5,13 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.safar.exception.AdminException;
 import com.safar.exception.RouteException;
@@ -21,35 +15,32 @@ import com.safar.service.RouteService;
 import jakarta.validation.Valid;
 
 @RestController
+@CrossOrigin(origins = "*")
+@RequestMapping("/safar")
 public class RouteController {
 	
 	@Autowired
 	private RouteService routeService;
 	
-	@PostMapping("/route/admin/{aid}")
-	public ResponseEntity<Route> addRoute(@Valid @RequestBody Route route,@PathVariable String aid) throws RouteException, AdminException{
+	@PostMapping("/admin/route/add")
+	public ResponseEntity<Route> addRoute(@Valid @RequestBody Route route,@RequestParam(required = false) String key) throws RouteException, AdminException{
 		
-		Route newRoute= routeService.addRoute(route,aid);
+		Route newRoute= routeService.addRoute(route, key);
 		
 		return new ResponseEntity<Route>(newRoute,HttpStatus.ACCEPTED);
 	}
 	
-	@GetMapping("/routes")
-	public ResponseEntity<List<Route>> getAllrouteHandler() throws RouteException{
+	@GetMapping("/route/all")
+	public ResponseEntity<List<Route>> getAllRouteHandler() throws RouteException{
 		
 		List<Route> route= routeService.viewAllRoute();
 		
 		return new ResponseEntity<>(route,HttpStatus.OK);
 	}
-	
-	
-	
-	
-	
 	
 
-	@GetMapping("/routes/{routeID}")
-	public ResponseEntity<List<Route>> getAllroutebyrouteidHandler() throws RouteException{
+	@GetMapping("/route/{routeID}")
+	public ResponseEntity<List<Route>> getAllRouteByRouteIdHandler() throws RouteException{
 		
 		List<Route> route= routeService.viewAllRoute();
 		
@@ -58,18 +49,18 @@ public class RouteController {
 	
 	
 	
-	@PutMapping("/route/admin/{aid}")
-	public ResponseEntity<Route> updateRoute(@Valid @RequestBody Route route,@PathVariable String aid) throws RouteException, AdminException{
+	@PutMapping("/admin/route/update")
+	public ResponseEntity<Route> updateRoute(@Valid @RequestBody Route route,@RequestParam(required = false) String key) throws RouteException, AdminException{
 		
-		Route newRoute= routeService.updateRoute(route,aid);
+		Route newRoute= routeService.updateRoute(route,key);
 		
 		return new ResponseEntity<Route>(newRoute,HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/route/admin/{routeID}/{aid}")
-	public ResponseEntity<Route> DeleteRoute(@PathVariable Integer routeID,@PathVariable String aid) throws RouteException, AdminException{
+	@DeleteMapping("/admin/route/delete/{routeID}")
+	public ResponseEntity<Route> DeleteRoute(@PathVariable Integer routeID,@RequestParam(required = false) String key) throws RouteException, AdminException{
 		
-		Route route = routeService.deleteRoute(routeID,aid);
+		Route route = routeService.deleteRoute(routeID,key);
 		
 		return new ResponseEntity<Route>(route,HttpStatus.OK);
 	}

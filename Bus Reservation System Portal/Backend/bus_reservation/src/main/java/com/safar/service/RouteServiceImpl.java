@@ -46,8 +46,7 @@ public class RouteServiceImpl implements RouteService{
 		Route newRoute = routerepository.findByRouteFromAndRouteTo(route.getRouteFrom(), route.getRouteTo());
 		
 		if(newRoute != null) throw new RouteException("Route :"+ newRoute.getRouteFrom() +" to "+ newRoute.getRouteTo()+ " is already present !");
-		
-		
+
 		List<Bus> buses = new ArrayList<>();	
 		
 		if(route != null) {
@@ -66,19 +65,15 @@ public class RouteServiceImpl implements RouteService{
 		
 		if(routes.isEmpty())
 			throw new RouteException("No route available");
-			
 		else
 			return routes;	
 			
 	}
 	@Override
 	public Route viewRoute(int routeId) throws RouteException {
-		
-		Optional<Route> opt=routerepository.findById(routeId);
-		
+		 Optional<Route> opt=routerepository.findById(routeId);
+
 		 return opt.orElseThrow(()->new RouteException("There is no route present of this  routeId :" + routeId));
-		
-		
 	}
 
 	@Override
@@ -108,8 +103,7 @@ public class RouteServiceImpl implements RouteService{
 	public Route deleteRoute(int routeID,String key) throws RouteException, AdminException {
 		
 		CurrentAdminSession loggedInAdmin= currentddminsessionrepository.findByaid(key);
-		
-		
+
 		if(loggedInAdmin == null) {
 			throw new AdminException("Please provide a valid id to add route !");
 		}

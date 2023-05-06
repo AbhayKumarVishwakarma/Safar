@@ -29,10 +29,13 @@ public class Feedback {
 	@Min(value=1, message="Rating must be in range of 1-5")  
 	@Max(value=5, message="Rating must be in range of 1-5") 
 	private Integer serviceRating;
-	
+
+	@Min(value=1, message="Rating must be in range of 1-5")
+	@Max(value=5, message="Rating must be in range of 1-5")
 	private Integer overallRating;
 	
 	private String comments;
+
 	private LocalDateTime feedbackDateTime;
 	
 	@OneToOne
@@ -40,7 +43,5 @@ public class Feedback {
 	
 	@OneToOne
 	private Bus bus;
-	
-	
-	
+
 }

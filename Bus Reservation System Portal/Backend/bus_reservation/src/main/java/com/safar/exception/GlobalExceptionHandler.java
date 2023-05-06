@@ -21,7 +21,7 @@ public class GlobalExceptionHandler {
     }
     
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<MyErrorDetails> exceptionHandler1(MethodArgumentNotValidException m){
+    public ResponseEntity<MyErrorDetails> MethodArgExceptionHandler(MethodArgumentNotValidException m){
         MyErrorDetails details = new MyErrorDetails();
         details.setTime(LocalDateTime.now());
         details.setMessage("Validation Error");
@@ -31,13 +31,13 @@ public class GlobalExceptionHandler {
 
     //Handling the busException here
     @ExceptionHandler(BusException.class)
-    public ResponseEntity<MyErrorDetails> busException(BusException busEx, WebRequest webReq){
+    public ResponseEntity<MyErrorDetails> busExceptionHandler(BusException busEx, WebRequest webReq){
         MyErrorDetails error = new MyErrorDetails(LocalDateTime.now(),busEx.getMessage(),webReq.getDescription(false));
         return new ResponseEntity<>(error,HttpStatus.BAD_REQUEST);
     }
     
     @ExceptionHandler(AdminException.class)
-    public ResponseEntity<MyErrorDetails> exceptionHandler2(AdminException e, WebRequest w){
+    public ResponseEntity<MyErrorDetails> adminExceptionHandler(AdminException e, WebRequest w){
         MyErrorDetails details = new MyErrorDetails();
         details.setTime(LocalDateTime.now());
         details.setMessage(e.getMessage());
@@ -46,7 +46,7 @@ public class GlobalExceptionHandler {
     }
     
     @ExceptionHandler(LoginException.class)
-    public ResponseEntity<MyErrorDetails> exceptionHandler4(LoginException e, WebRequest w){
+    public ResponseEntity<MyErrorDetails> loginExceptionHandler(LoginException e, WebRequest w){
         MyErrorDetails details = new MyErrorDetails();
         details.setTime(LocalDateTime.now());
         details.setMessage(e.getMessage());
@@ -58,7 +58,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler
     public ResponseEntity<MyErrorDetails> reservationExceptionHandler(ReservationException ex, WebRequest w){
         MyErrorDetails details = new MyErrorDetails();
-
         details.setMessage(ex.getMessage());
         details.setTime(LocalDateTime.now());
         details.setDetails(w.getDescription(false));
@@ -67,7 +66,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(UserException.class)
-    public ResponseEntity<MyErrorDetails> exceptionHandler3(UserException e, WebRequest w){
+    public ResponseEntity<MyErrorDetails> userExceptionHandler(UserException e, WebRequest w){
         MyErrorDetails details = new MyErrorDetails();
         details.setTime(LocalDateTime.now());
         details.setMessage(e.getMessage());
@@ -76,7 +75,7 @@ public class GlobalExceptionHandler {
     }
     
     @ExceptionHandler(RouteException.class)
-	public ResponseEntity<MyErrorDetails> routeException(RouteException e,WebRequest w){
+	public ResponseEntity<MyErrorDetails> routeExceptionHandler(RouteException e,WebRequest w){
 		
     	 MyErrorDetails details = new MyErrorDetails();
          details.setTime(LocalDateTime.now());
