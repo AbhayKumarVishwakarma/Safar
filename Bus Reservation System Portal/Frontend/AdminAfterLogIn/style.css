@@ -1,0 +1,86 @@
+body{
+    background: url("https://t4.ftcdn.net/jpg/05/48/63/07/360_F_548630788_WKtHWgQ8sVqDhCti2kT3sXHhdk7GZtgu.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+}
+body>h1{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  color: black;
+  filter: drop-shadow(2px 4px 6px darkblue);
+}
+#boxes{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 20px;
+    column-gap: 30px;
+    padding: 50px;
+    margin: auto;
+}
+ .box3{
+  grid-column-end: span 2;
+} 
+.box h2 {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 20px;
+    font-size: 24px;
+    color: black;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.box{
+    height: 200px;
+    border: 5px solid black;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    filter: drop-shadow(2px 4px 6px black);
+    transition: transform 0.3s ease-in-out;
+
+} 
+
+.box1 {
+    background: url(images/bus.png) no-repeat center crimson;
+    background-size: contain;
+    filter: drop-shadow(2px 4px 6px black)
+  }
+
+  .box2 {
+    background: url(images/reservation.jpg) no-repeat center aquamarine;
+    background-size: contain;
+    border: 5px solid white;
+    filter: invert(1);
+  }
+  
+  
+  .box3 {
+    background: url(images/route.jpg) no-repeat center teal;
+    background-size: contain;
+    filter: drop-shadow(2px 4px 6px black);
+  }
+
+  .box4 {
+    background: url(images/feedback.jpg) no-repeat center sienna;
+    background-size: contain;
+    filter: invert(1);
+    border: 5px solid white;
+  }
+
+   .box5 {
+    background: url(images/user.png) no-repeat center sandybrown;
+    background-size: contain;
+    filter: drop-shadow(2px 4px 6px black);
+  }
+  
+  
+
+.box:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transform: scale(1.03);
+  }
+  
+  
+
+  
