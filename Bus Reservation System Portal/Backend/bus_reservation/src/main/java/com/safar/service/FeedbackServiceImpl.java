@@ -13,6 +13,7 @@ import com.safar.model.Bus;
 import com.safar.model.CurrentUserSession;
 import com.safar.model.User;
 import com.safar.repository.BusRepository;
+import com.safar.repository.CurrentUserSessionRepository;
 import com.safar.repository.UserRepository;
 import com.safar.exception.FeedBackException;
 import com.safar.model.Feedback;
@@ -32,7 +33,7 @@ public class FeedbackServiceImpl implements FeedbackService {
 	private BusRepository busDao;
 	
 	@Autowired
-	private UserSessionDao userSessionDao;
+	private CurrentUserSessionRepository userSessionDao;
 
 	@Override
 	public Feedback addFeedBack(Feedback feedBack, Integer busId,String key) throws BusException, UserException {
@@ -43,7 +44,7 @@ public class FeedbackServiceImpl implements FeedbackService {
 			throw new UserException("Please provide a valid key to give Feedback!");
 		}
 		
-		User user = userDao.findById(loggedInUser.getUserId()).orElseThrow(()-> new UserException("User not found!"));
+		User user = userDao.findById(loggedInUser.getUserID()).orElseThrow(()-> new UserException("User not found!"));
 		
 		Optional<Bus> busOptional = busDao.findById(busId);
 		if (busOptional.isEmpty()) {
@@ -69,7 +70,7 @@ public class FeedbackServiceImpl implements FeedbackService {
 			throw new UserException("Please provide a valid key to update Feedback!");
 		}
 		
-		User user = userDao.findById(loggedInUser.getUserId()).orElseThrow(()-> new UserException("User not found!"));
+		User user = userDao.findById(loggedInUser.getUserID()).orElseThrow(()-> new UserException("User not found!"));
 
 		Optional<Feedback> opt = fdao.findById(feedback.getFeedBackId());
 		
@@ -127,7 +128,7 @@ public class FeedbackServiceImpl implements FeedbackService {
 			throw new UserException("Please provide a valid key to update Feedback!");
 		}
 		
-		User user = userDao.findById(loggedInUser.getUserId()).orElseThrow(()-> new UserException("User not found!"));
+		User user = userDao.findById(loggedInUser.getUserID()).orElseThrow(()-> new UserException("User not found!"));
 		
 		Optional<Feedback> fedOptional = fdao.findById(feedbackId);
 		
