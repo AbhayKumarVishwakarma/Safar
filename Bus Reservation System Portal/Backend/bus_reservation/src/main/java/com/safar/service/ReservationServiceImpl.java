@@ -78,7 +78,7 @@ public class ReservationServiceImpl implements ReservationService{
 
         return reservationRepository.save(reservation);
     }
-
+ 
     @Override
     public Reservation viewReservation(Integer rid, String key) throws ReservationException {
     	
@@ -106,7 +106,7 @@ public class ReservationServiceImpl implements ReservationService{
 
         List<Reservation> list = reservationRepository.findAll();
 
-        if(list == null) throw new ReservationException("Reservation Not found");
+        if(list.isEmpty()) throw new ReservationException("Reservation Not found");
 
         return list;
     }
@@ -130,7 +130,8 @@ public class ReservationServiceImpl implements ReservationService{
     	
     	List<Reservation> reservations = user.getReservationList();
     	
-    	if(reservations == null) throw new ReservationException("Reservation not found for this user");
+    	if(reservations.isEmpty()) throw new ReservationException("Reservation not found for this user");
+
     	
         return reservations;
     }

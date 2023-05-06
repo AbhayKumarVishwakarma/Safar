@@ -59,7 +59,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<MyErrorDetails> reservationExceptionHandler(ReservationException ex, WebRequest w){
         MyErrorDetails details = new MyErrorDetails();
 
-        details.setDetails(ex.getMessage());
+        details.setMessage(ex.getMessage());
         details.setTime(LocalDateTime.now());
         details.setDetails(w.getDescription(false));
 

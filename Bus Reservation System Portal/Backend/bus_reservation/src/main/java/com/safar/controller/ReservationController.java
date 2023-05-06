@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/reservation")
+@RequestMapping("/safar/reservation")
 public class ReservationController {
     @Autowired
     private ReservationService service;
@@ -44,7 +44,7 @@ public class ReservationController {
     @GetMapping("/reservations/{rid}/{key}")
     public ResponseEntity<Reservation> viewReservationById(@PathVariable Integer rid, @PathVariable String key) throws ReservationException {
         Reservation reservation = service.viewReservation(rid, key);
-
+        
         return new ResponseEntity<>(reservation, HttpStatus.FOUND);
     }
 
