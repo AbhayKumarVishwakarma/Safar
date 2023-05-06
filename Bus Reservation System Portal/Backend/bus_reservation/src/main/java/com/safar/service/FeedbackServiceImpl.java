@@ -13,6 +13,11 @@ import com.safar.exception.UserException;
 import com.safar.model.Bus;
 import com.safar.model.CurrentUserSession;
 import com.safar.model.User;
+
+import com.safar.repository.BusRepository;
+import com.safar.repository.CurrentUserSessionRepository;
+import com.safar.repository.UserRepository;
+
 import com.safar.exception.FeedBackException;
 import com.safar.model.Feedback;
 import com.safar.repository.UserRepository;
@@ -108,6 +113,7 @@ public class FeedbackServiceImpl implements FeedbackService {
 		if(loggedInUser == null) {
 			throw new UserException("Please provide a valid key to update Feedback!");
 		}
+
 		User user = userDao.findById(loggedInUser.getUserID()).orElseThrow(()-> new UserException("User not found!"));
 		
 		Optional<Feedback> fedOptional = fdao.findById(feedbackId);
