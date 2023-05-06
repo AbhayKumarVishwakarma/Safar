@@ -18,7 +18,7 @@ public class AdminServiceImpl implements AdminService{
     private CurrentAdminSessionRepository adminSessionRepository;
 
     @Override
-    public Admin createAdmin(Admin admin) throws AdminException {
+    public Admin createAdmin(Admin admin) throws AdminException{
         Admin a = adminRepository.findByEmail(admin.getEmail());
         if(a != null) throw new AdminException("Admin is already register with email (" + a.getEmail() + ")");
         return adminRepository.save(admin);
@@ -31,4 +31,5 @@ public class AdminServiceImpl implements AdminService{
         if(admin.getAdminID() != adminSession.getAdminID()) throw new AdminException("Invalid admin details, please login for updating admin!");
         return adminRepository.save(admin);
     }
+    	
 }

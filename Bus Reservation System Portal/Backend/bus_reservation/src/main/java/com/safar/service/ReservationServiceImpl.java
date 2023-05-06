@@ -124,12 +124,14 @@ public class ReservationServiceImpl implements ReservationService{
     	
     	Optional<User> optional = userRepository.findById(uid);
     	
-    	if(optional.isEmpty()) throw new ReservationException("User not find with given user id: " + uid);
+    	if(optional.isEmpty()) throw new ReservationException("User not find with given user id: " + uid);
+
     	User user = optional.get();
     	
     	List<Reservation> reservations = user.getReservationList();
     	
     	if(reservations.isEmpty()) throw new ReservationException("Reservation not found for this user");
+
     	
         return reservations;
     }

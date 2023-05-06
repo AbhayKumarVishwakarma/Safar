@@ -31,7 +31,7 @@ public class AdminLoginServiceImpl implements AdminLoginService{
         if(loggedInAdmin.isPresent()) throw new LoginException("Admin is already loggedIn!");
 
         if(registeredAdmin.getPassword().equals(loginDTO.getPassword())){
-            String key = "ASD@12"; //RandomString.make(6);
+            String key = "safar123"; //RandomString.make(6);
             CurrentAdminSession adminSession = new CurrentAdminSession();
             adminSession.setAdminID(registeredAdmin.getAdminID());
             adminSession.setAid(key);
