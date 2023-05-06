@@ -31,7 +31,8 @@ public class BusServiceImpl implements BusService{
             throw new AdminException("Key is not valid! Please provide a valid key.");
         }
 
-        Route route = new Route(); //finding and checking route => pending
+        //finding and checking route
+        Route route = routeRepo.findByRouteFromAndRouteTo(bus.getRouteFrom(),bus.getRouteTo());
         if(route==null) throw new BusException("Route is not valid");
 
         //adding this new bus to the route
@@ -56,7 +57,7 @@ public class BusServiceImpl implements BusService{
         //checking if bus scheduled or not , can be updated only if not scheduled
         if(existBus.getAvailableSeats() != existBus.getSeats()) throw new BusException("Scheduled bus can't be updated");
 
-        Route route = new Route(); //finding and checking route => pending
+        Route route = routeRepo.findByRouteFromAndRouteTo(bus.getRouteFrom(),bus.getRouteTo()); //finding and checking route => pending
 
         if(route==null) throw new BusException("Route is not valid");
         bus.setRoute(route);
@@ -74,9 +75,9 @@ public class BusServiceImpl implements BusService{
 
         if(bus.isPresent()){
             Bus existingBus = bus.get();
-
+            //checking if current date is before journey date it means bus scheduled so can't delete / or seats are reserved or not
             if(LocalDate.now().isBefore(existingBus.getBusJourneyDate()) && existingBus.getAvailableSeats()!=existingBus.getSeats())
-                throw new BusException("Cannot delete as the bus is scheduled and reservations are booked for the bus.");
+                throw new BusException("Can't delete scheduled and reserved bus.");
 
             busRepo.delete(existingBus);
             return existingBus;

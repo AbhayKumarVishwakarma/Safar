@@ -7,17 +7,17 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bus.exception.BusException;
-import com.bus.exception.UserException;
-import com.bus.model.Bus;
-import com.bus.model.CurrentUserSession;
-import com.bus.model.User;
-import com.bus.repository.BusRepository;
-import com.bus.repository.UserRepository;
+import com.safar.exception.BusException;
+import com.safar.exception.UserException;
+import com.safar.model.Bus;
+import com.safar.model.CurrentUserSession;
+import com.safar.model.User;
+import com.safar.repository.BusRepository;
+import com.safar.repository.UserRepository;
 import com.safar.exception.FeedBackException;
 import com.safar.model.Feedback;
 import com.safar.repository.FeedbackRepository;
-import com.bus.repository.UserRepository;
+import com.safar.repository.UserRepository;
 
 @Service
 public class FeedbackServiceImpl implements FeedbackService {
@@ -29,7 +29,7 @@ public class FeedbackServiceImpl implements FeedbackService {
 	private UserRepository userDao;
 
 	@Autowired
-	private BusDao busDao;
+	private BusRepository busDao;
 	
 	@Autowired
 	private UserSessionDao userSessionDao;

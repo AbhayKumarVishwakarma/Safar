@@ -30,7 +30,7 @@ public class BusController {
     }
 
     @PutMapping("/buses/admin")
-    public ResponseEntity<Bus> updateBusHandler(@Valid @RequestBody Bus bus, String key) throws BusException, AdminException{
+    public ResponseEntity<Bus> updateBusHandler(@Valid @RequestBody Bus bus,@RequestParam(required = false) String key) throws BusException, AdminException{
         Bus newBus = busServ.updateBus(bus,key);
         return new ResponseEntity<>(newBus,HttpStatus.OK);
     }
@@ -38,7 +38,7 @@ public class BusController {
 
 
     @DeleteMapping("/buses/admin/{busId}")
-    public ResponseEntity<Bus> deleteBusByBusIdHandler(@PathVariable("busId") Integer busId, String key) throws BusException, AdminException{
+    public ResponseEntity<Bus> deleteBusByBusIdHandler(@PathVariable("busId") Integer busId,@RequestParam(required = false) String key) throws BusException, AdminException{
         Bus deletedBus = busServ.deleteBus(busId,key);
         return new ResponseEntity<>(deletedBus,HttpStatus.OK);
     }

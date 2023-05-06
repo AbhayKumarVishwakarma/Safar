@@ -53,11 +53,14 @@ public class Bus {
 
     private Integer availableSeats;
 
+    @NotNull(message = "fare can't be null")
+    private Integer fare;
+
     @ManyToOne
     private Route route;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "bus")
+    @OneToMany(mappedBy = "bus",cascade = CascadeType.ALL)
     private List<Reservation> reservationList = new ArrayList<>();
 }
 
