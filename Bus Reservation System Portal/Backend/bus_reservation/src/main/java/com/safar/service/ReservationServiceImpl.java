@@ -73,7 +73,7 @@ public class ReservationServiceImpl implements ReservationService{
           reservation.setTime(LocalTime.now());
           reservation.setJourneyDate(dto.getJourneyDate());
           reservation.setBus(bus);
-          reservation.setFare(bus.getFare());
+          reservation.setFare(bus.getFare() * dto.getBookedSeat());
           reservation.setBookedSeat(dto.getBookedSeat());
           reservation.setUser(user);
 
@@ -148,7 +148,16 @@ public class ReservationServiceImpl implements ReservationService{
     	if(optional.isEmpty()) throw new ReservationException("Reservation not found with the given id: " + rid);
     	
     	Reservation reservation = optional.get();
-
+    	
+    	if(reservation.getJourneyDate().isBefore(LocalDate.now())) throw new ReservationException("Reservation Already Expired");
+    	
+    	Integer n = reservation.getBus().getAvailableSeats();
+    	
+    	reservation.getBus().setAvailableSeats(n + reservation.getBookedSeat());
+    	
+    	Bus bus = reservation.getBus();
+    	
+    	busRepository.save(bus);    	
         reservationRepository.delete(reservation);
         
         return reservation;
