@@ -40,9 +40,9 @@ public class RouteController {
 	
 
 	@GetMapping("/route/{routeID}")
-	public ResponseEntity<List<Route>> getAllRouteByRouteIdHandler() throws RouteException{
+	public ResponseEntity<Route> getAllRouteByRouteIdHandler( @PathVariable Integer routeID) throws RouteException{
 		
-		List<Route> route= routeService.viewAllRoute();
+		Route route= routeService.viewRoute(routeID);
 		
 		return new ResponseEntity<>(route,HttpStatus.OK);
 	}
