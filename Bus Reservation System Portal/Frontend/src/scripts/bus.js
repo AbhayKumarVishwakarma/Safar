@@ -1,15 +1,12 @@
 let busid = localStorage.getItem("busid");
 
 let url = "https://6385feaa875ca3273d4cccf8.mockapi.io/ItsNix";
+let bus;
 
 async function fetchData(){
     try{
          let res = await fetch(url);
          let out = await res.json();
-
-         let bus;
-
-         console.log(out);
 
          out.forEach(element => {
             if(element.busId == busid) bus = element;
@@ -34,3 +31,22 @@ async function fetchData(){
 }
 
 fetchData();
+
+
+document.querySelector("form").addEventListener("submit", save);
+
+function save(event){
+    event.preventDefault();
+
+    let rev = {
+        "source" : bus.routeFrom,
+        "destination" : bus.routeTo,
+        "journeyDate" : bus.busJourneyDate,
+        "bookedSeat" : document.querySelector("#booked").value
+    }
+
+    localStorage.setItem("rev", JSON.stringify(rev));
+
+    window.location.href = "./payment.html";
+}
+

@@ -12,7 +12,7 @@
     <section>
         <div class="container" style="margin: 100px;">
             <div class="bus">
-                <h3 id=""></h3>
+                <h3 id="name"></h3>
                 <p>Safar.com</p>
 
                 <ul>
@@ -26,7 +26,12 @@
                     <li><img class="checkmark" src="./src/images/checkmark.png"> <span id="fare"><b>Fare:</b> ₹ </span></li>
                 </ul>
 
-                <a href="./payment.html"><button>Book Reservation</button></a>
+                <form >
+                    <label >Enter booking seats: </label>
+                    <input id="booked" type="number" required> <br> <br>
+
+                    <button type="submit">Book Reservation</button>
+                </form>
             </div>
         </div>
     </section>
