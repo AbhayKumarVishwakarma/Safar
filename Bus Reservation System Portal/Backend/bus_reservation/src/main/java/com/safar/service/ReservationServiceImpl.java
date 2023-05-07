@@ -71,6 +71,7 @@ public class ReservationServiceImpl implements ReservationService{
           reservation.setStatus("Successful");
           reservation.setDate(LocalDate.now());
           reservation.setTime(LocalTime.now());
+          reservation.setJourneyDate(dto.getJourneyDate());
           reservation.setBus(bus);
           reservation.setFare(bus.getFare());
           reservation.setBookedSeat(dto.getBookedSeat());
@@ -118,7 +119,7 @@ public class ReservationServiceImpl implements ReservationService{
     	
     	CurrentUserSession currentUserSession = currentUserSessionRepository.findByUuid(key);
     	
-    	if(currentAdminSession == null || currentUserSession == null) throw new ReservationException("Invalid login key");
+    	if(currentAdminSession == null && currentUserSession == null) throw new ReservationException("Invalid login key");
     	
 //    	if(currentUserSession == null) throw new ReservationException("Invalid user login key");
     	
