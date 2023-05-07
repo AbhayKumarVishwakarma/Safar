@@ -1,39 +1,43 @@
+let busid = localStorage.getItem("adminBus");
+
 let url = "https://6385feaa875ca3273d4cccf8.mockapi.io/ItsNix";
-let buttons = null;
 
 async function fetchData(){
     try{
          let res = await fetch(url);
          let out = await res.json();
 
-         console.log(out)
+         let bus;
+
+         console.log(out);
 
          out.forEach(element => {
-            document.querySelector(".busData").innerHTML +=   `<tr>
-                    <td class="column1">${element.busName}</td>
-                    <td class="column2">${element.routeFrom}</td>
-                    <td class="column3">${element.routeTo}</td>
-                    <td class="column4">₹ ${element.fare}</td>
-                    <td class="column5">${element.availableSeats}</td>
-                    <td class="column6"><button id="bus${element.busId}" >update</button></td>
-                    <td class="column6"><button id="bus${element.busId}" >delete</button></td>
-                </tr>`;
+            if(element.busId == busid) bus = element;
+            
          });
 
-         buttons = document.querySelectorAll('button');
-         
-         let busid;
-         buttons.forEach(button => {
-            button.addEventListener('click', function(event) {
-              busid = event.target.id[3];
+         console.log(bus);
 
-              localStorage.setItem("busid", busid);
-              window.location.href = "./bus.html"
-            });
-          });
+         fillData(bus);
+         
     } catch(error){
         console.log(error);
     }
 }
 
 fetchData();
+
+function fillData(bus){
+    document.querySelector("#busid").value = bus.busId;
+    document.querySelector("#busName").value = bus.busName;
+    document.querySelector("#driverName").value = bus.driverName;
+    document.querySelector("#bustype").value = bus.busType;
+    document.querySelector("#from").value = bus.routeFrom;
+    document.querySelector("#to").value = bus.routeTo;
+    document.querySelector("#date").value = bus.busJourneyDate;
+    document.querySelector("#arrival").value = bus.arrivalTime;
+    document.querySelector("#departure").value = bus.departureTime;
+    document.querySelector("#totalseat").value = bus.availableSeats;
+    document.querySelector("#available").value = bus.availableSeats;
+    document.querySelector("#fare").value = bus.fare;
+}

@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Buses</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus</title>
 
-        <link rel="stylesheet" href="./src/styles/buses.css">
-        <link rel="stylesheet" href="./src/styles/button1.css">
+    <style>
+        div{
+            margin: 100px;
+        }
 
-        <style>
-            .column6 button{
-                margin-right: -20px;
-            }
-        </style>
-    </head>
-    <body>
-        <section style="margin: 100px;">
-            <div class="mainTable">
-                <div>
-                    <table>
-                        <thead>
-                            <tr class="table100-head">
-                                <th class="column1">Bus Name</th>
-                                <th class="column2">From</th>
-                                <th class="column3">To</th>
-                                <th class="column4">Fare</th>
-                                <th class="column5">Seats</th>
-                                <th class="column6">Update</th>
-                                <th class="column6" >Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody class="busData">
-                            <!-- Fetch Bus Details -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+        label, input{
+            margin: 5px;
+        }
 
+        button{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <form >
+                <label >Bus Id: </label> <input id="busid" type="text" readonly> <br>
+                <label >Bus Name: </label> <input id="busName" type="text" readonly> <br>
+                <label >Driver Name: </label> <input id="driverName" type="text" readonly> <br>
+                <label >Bus Type: </label> <input id="bustype" type="text" readonly> <br>
+                <label >From: </label> <input id="from" type="text" readonly> <br>
+                <label >To: </label> <input id="to" type="text" readonly> <br>
+                <label >Journey Date: </label> <input id="date" type="text" readonly> <br>
+                <label >Arrival Time: </label> <input id="arrival" type="text" readonly> <br>
+                <label >Departure Time: </label> <input id="departure" type="text" readonly> <br>
+                <label >Total Seats: </label> <input id="totalseat" type="text" readonly> <br>
+                <label >Available Seats: </label> <input id="available" type="text" readonly> <br>
+                <label >Fare: </label> <input id="fare" type="text" readonly> <br>
 
-        </section>
-    </body>
+                <button class="updateBtn">Update</button>
+                <button class="deleteBtn">Delete</button>
+            </form>
+        </div>
+    </section>
+</body>
 </html>
 
 <script src="./src/scripts/adminbus.js"></script>
