@@ -1,7 +1,10 @@
-
-body{
-    background-color:wheat;
+*{
+  margin: 0%;
+  padding: 0%;
 }
+ body{
+    background-color:wheat;
+} 
 header {
     background-color:black;
     color: #fff;
@@ -78,23 +81,23 @@ header {
   nav ul li:hover > ul {
     visibility: visible;
   }
-*{
-  margin: 0;
-  padding: 0;
-}
+
 
 /* =-=--=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=- */
 
-section{
+ section{
     margin: auto;
 }
 
 
 .mainTable{
     width: 80%;
+} 
+
+#table1{
+  margin-bottom: 30%;
+  margin-top: 5%;
 }
-
-
 table {
     border-spacing: 1;
     border-collapse: collapse;
@@ -103,11 +106,11 @@ table {
     overflow: hidden;
     width: 100%;
     margin: 0 auto;
-    position: relative;
+     position: relative; 
     margin-left:10% ;
 }
 
-table * {
+ table * {
     position: relative
 }
 
@@ -191,7 +194,7 @@ tbody tr:hover {
 .column5 {
     width: 170px;
     text-align: right
-}
+} 
 
 .column6 {
     width: 222px;
@@ -209,13 +212,13 @@ tbody tr:hover {
 
 
 
+ 
 
 
 
 
 
-
-footer {
+ footer {
     background-color: rgb(26,35,47);
     
     
@@ -273,4 +276,4 @@ footer {
   
 
 /* =---=--=-=-=-=-=--=--=  Footer =-=-=--=-=-=---=-=--=- */
-
+ 
