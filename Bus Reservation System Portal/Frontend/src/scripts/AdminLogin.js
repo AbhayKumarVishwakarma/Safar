@@ -10,31 +10,31 @@
         let pEmail = document.querySelector("#email").value
         let pPassword = document.querySelector("#password").value
 
-        let pObj = {
-            pEmail,
-            pPassword
+        let obj = {
+            "email":pEmail,
+            "password":pPassword
         }
-        let flag = "no";
-        login.forEach(function (element, index) {
-            if (element.pEmail === pObj.pEmail && element.pPassword === pObj.pPassword) {
-                flag = "yes"
-            }
+        // let flag = "no";
+        // login.forEach(function (element, index) {
+        //     if (element.pEmail === pObj.pEmail && element.pPassword === pObj.pPassword) {
+        //         flag = "yes"
+        //     }
 
-            else if (element.pEmail !== pObj.pEmail) {
-                alert("Wrong Email")
-            }
-            else if (element.pPassword !== pObj.pPassword) {
+        //     else if (element.pEmail !== pObj.pEmail) {
+        //         alert("Wrong Email")
+        //     }
+        //     else if (element.pPassword !== pObj.pPassword) {
 
-                alert("Wrong Password")
-            }
-        })
+        //         alert("Wrong Password")
+        //     }
+        // })
 
-        if (flag == "yes") {
-            alert("login Succesfully")
-            location.href = "index.html"
-        }
+        // if (flag == "yes") {
+        //     alert("login Succesfully")
+        //     location.href = "index.html"
+        // }
 
-        console.log(login, typeof login)
+        loginAdmin(obj)
     }
 
 
@@ -61,3 +61,27 @@
     // })
 
 
+    async function loginAdmin(obj){
+        try {      
+            const res = await fetch("http://localhost:8999/safar/admin/login",{
+                method: 'POST',
+                body: JSON.stringify(obj),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+    
+            const out = await res.json();
+            if(res.ok){
+                alert("Admin Logged-in successfully!")
+            setTimeout(function() {
+                window.location.href = "admin.html";
+              }, 2000); 
+            }
+            
+    
+        } catch (error) {
+            //showing alert for error
+            alert(error);
+        }
+    }

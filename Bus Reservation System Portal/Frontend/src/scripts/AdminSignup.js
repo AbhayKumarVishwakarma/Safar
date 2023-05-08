@@ -1,7 +1,7 @@
 
 
     document.querySelector("form").addEventListener("submit", myfun)
-    let arr = JSON.parse(localStorage.getItem("PDetails")) || [];
+    // let arr = JSON.parse(localStorage.getItem("PDetails")) || [];
 
     function myfun(event) {
         event.preventDefault()
@@ -23,18 +23,20 @@
         // }
         else {
             let obj = {
-                pName,
-                pEmail,
-                pPassword,
+                "name":pName,
+                "email":pEmail,
+                "password":pPassword
                 // pBdate,
                 // pCountry,
                 // pState
             }
-            arr.push(obj)
-            console.log(arr)
-            localStorage.setItem("pDetails", JSON.stringify(arr))
-            alert("Sign Up successful")
-            location.href = "index.html"
+            // arr.push(obj)
+            console.log(obj)
+            // localStorage.setItem("pDetails", JSON.stringify(arr))
+            // alert("Sign Up successful")
+            // location.href = "index.html"
+
+            addAdmin(obj)
         }
 
     }
@@ -60,3 +62,27 @@
 
     // })
 
+async function addAdmin(obj){
+    try {      
+        const res = await fetch("http://localhost:8999/safar/admin/register",{
+            method: 'POST',
+            body: JSON.stringify(obj),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        const out = await res.json();
+        if(res.ok){
+            alert("Admin created successfully!")
+        setTimeout(function() {
+            window.location.href = "AdminLogin.html";
+          }, 2000); 
+        }
+        
+
+    } catch (error) {
+        //showing alert for error
+        alert(error);
+    }
+}
