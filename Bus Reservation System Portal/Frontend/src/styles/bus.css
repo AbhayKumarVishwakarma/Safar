@@ -1,7 +1,13 @@
+
+body{
+    background-color: aqua;
+}
+
 *{
     padding: 0;
     margin: 0;
 }
+
 
 
 header {
@@ -84,7 +90,10 @@ header {
 
 
 
+
+
 /* -=--=-=--=--=-=-=-=-=-=--=-=-=-=-=-=-=-=-=---=-=--=-=-= */
+
 
 
 .checkmark{
@@ -99,3 +108,80 @@ li{
 li span{
     margin-left: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: rgb(26,35,47);
+    
+    
+  }
+  .row{
+   margin-left:18%;
+  
+  }
+  .col-md-4{
+    margin-left:-17%;
+   
+  }
+  
+  footer h4 {
+    color:white;
+    font-size: 20px;
+    margin-bottom: 2%;
+    margin-top: 5%;
+  }
+  
+  footer p {
+    color: white;
+    
+    margin-bottom:-1% ;
+  }
+  
+  footer ul li {
+    color: white;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  footer ul li i {
+    color: white;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  footer ul.social-links li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  footer ul.social-links li a {
+    color: white;
+    font-size: 18px;
+  }
+  
+  footer ul.social-links li a:hover {
+    color: #e83e8c;
+  }
+  
+  
+  
