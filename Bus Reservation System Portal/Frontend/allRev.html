@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+    <link rel="stylesheet" href="./src/styles/buses.css">
+    <link rel="stylesheet" href="./src/styles/button1.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+          <a href="./index.html" class="logo">
+            <img src="./src/images/logo.jpg" style="width: 100px; margin-left: 50px;" alt="Safar Logo" >
+          </a>
+          <nav>
+            <ul>
+              <li class="bus"><a href="./buses.html">Bus</a></li>
+              <li class="cancel"><a href="./allRev.html">Reservation</a></li>
+            
+                  <li class="Mangage"><a href="#">Route</a> </li>
+              
+              
+              <li class="Help"><a href="./feedback.html">Feedback</a></li>
+              
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+                  <i class="fas fa-user-circle"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Admin Sign Up/login</a>
+                  <a class="dropdown-item" href="#">User Sign Up/login</a>
+                </div>
+              </li> -->
+            
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+
+
+    <section style="margin: 100px;">
+        <div class="mainTable">
+            <div>
+                <table>
+                    <thead>
+                        <tr class="table100-head">
+                            <th class="column1">Id</th>
+                            <th class="column2">From</th>
+                            <th class="column3">To</th>
+                            <th class="column4">Fare</th>
+                            <th class="column5">Seats</th>
+                            <th class="column5">Journey Date</th>
+                            <th class="column5">Booked Date</th>
+                            <th class="column5">Status</th>
+                            <th class="column6" style="padding-right: 62px;">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="busData">
+                        <!-- Fetch Bus Details -->
+                        <tr>
+                            <td class="column1">1</td>
+                            <td class="column2">Delhi</td>
+                            <td class="column3">Mumbai</td>
+                            <td class="column4">5000</td>
+                            <td class="column5">4</td>
+                            <td class="column5">16/05/2023</td>
+                            <td class="column5">10/05/2023</td>
+                            <td class="column5">Scussessful</td>
+                            <td class="column6"><button id="bus${element.reservationID}" >Book</button></td>
+                        </tr>
+
+                        <tr>
+                            <td class="column1">1</td>
+                            <td class="column2">Delhi</td>
+                            <td class="column3">Mumbai</td>
+                            <td class="column4">5000</td>
+                            <td class="column5">4</td>
+                            <td class="column5">16/05/2023</td>
+                            <td class="column5">10/05/2023</td>
+                            <td class="column5">Scussessful</td>
+                            <td class="column6"><button id="bus${element.reservationID}" >Book</button></td>
+                        </tr>
+
+                        <tr>
+                            <td class="column1">1</td>
+                            <td class="column2">Delhi</td>
+                            <td class="column3">Mumbai</td>
+                            <td class="column4">5000</td>
+                            <td class="column5">4</td>
+                            <td class="column5">16/05/2023</td>
+                            <td class="column5">10/05/2023</td>
+                            <td class="column5">Scussessful</td>
+                            <td class="column6"><button id="bus${element.reservationID}" >Book</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </section>
+</body>
+</html>
