@@ -67,14 +67,20 @@ public class BusController {
 
 // format for sending post request
 //{
-//        "busId": 0,
-//        "busName": "string",
-//        "driverName": "string",
-//        "busType": "string",
-//        "routeFrom": "string",
-//        "routeTo": "string",
-//        "arrivalTime": "08:30:00",
-//        "departureTime": "09:00:00",
-//        "seats": 10,
-//        "availableSeats": 5
+//        "busName": "16thBus",
+//        "driverName": "yash",
+//        "busType": "ac",
+//        "routeFrom": "mumbai",
+//        "routeTo": "lucknow",
+//        "busJourneyDate": "2023-05-08",
+//        "arrivalTime":"09:00:00",
+//        "departureTime":"12:00:00",
+//        "seats": 35,
+//        "availableSeats": 35,
+//        "fare": 350,
+//        "route": {
+//        "routeFrom": "a",
+//        "routeTo": "b",
+//        "distance": 2000
+//        }
 //        }

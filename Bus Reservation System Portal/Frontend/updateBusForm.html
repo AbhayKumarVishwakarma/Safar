@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/styles/addBus.css">
+</head>
+<body>
+    <form action="http://localhost:8999/safar/admin/bus/update?key=safar123" method="put">
+
+        <label for="bus-id">Enter Bus ID to update: </label>
+        <input type="text" id="busId" name="busId" required> <br><br>
+
+		<label for="busName">Bus Name:</label>
+		<input type="text" id="busName" name="busName" required><br><br>
+
+        <label for="driverName">Driver Name:</label>
+		<input type="text" id="driverName" name="driverName" required><br><br>
+
+
+		<label for="bus_type">Bus Type:</label>
+		<select id="bus_type" name="bus_type">
+			<option value="AC">AC</option>
+			<option value="Non-AC">Non-AC</option>
+			<option value="Sleeper">Sleeper</option>
+			<option value="Seater">Seater</option>
+		</select><br><br>
+
+		<label for="source">Source:</label>
+		<input type="text" id="source" name="source" required><br><br>
+
+		<label for="destination">Destination:</label>
+		<input type="text" id="destination" name="destination" required><br><br>
+
+        <label for="journeyDate">Journey Date:</label>
+        <input type="date" name="busJourneyDate" value=""><br><br>
+
+
+        <label for="arrival_time">Arrival Time:</label>
+		<input type="time" id="arrival_time" name="arrival_time" required><br><br>
+
+		<label for="departure_time">Departure Time:</label>
+		<input type="time" id="departure_time" name="departure_time" required><br><br>
+
+		<label for="totalSeats">Total Seats:</label>
+		<input type="number" id="totalSeats" name="totalSeats" min="0" required><br><br>
+
+        <label for="distance">Distance(in km):</label>
+		<input type="distance" id="distance" name="distance" required><br><br>
+
+		<label for="fare">Price:</label>
+		<input type="number" id="fare" name="fare" required><br><br>
+
+		<input type="submit" value="Update Bus">
+	</form>
+</body>
+</html>
+<script src="./src/scripts/updateBus.js"></script>
