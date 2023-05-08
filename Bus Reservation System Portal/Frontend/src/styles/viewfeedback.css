@@ -8,7 +8,9 @@ header {
     margin-top: -1.5%;
     
   }
-  
+  body{
+    margin-top: 1.5%;
+  }
   .header-container {
     display: flex;
     justify-content: space-between;
@@ -108,6 +110,7 @@ h1{
     text-align: center;
     margin-bottom: 15px;
    margin-right: 10%;
+   margin-left: 5%; 
   }
   table{
     width:100%;
@@ -115,31 +118,38 @@ h1{
   }
   .tbl-header{
     background-color: rgba(255,255,255,0.3);
+    
    }
   .tbl-content{
     height:300px;
     overflow-x:auto;
     margin-top: 0px;
     border: 1px solid rgba(255,255,255,0.3);
+   
   }
   th{
-    padding: 20px 15px;
+      padding: 20px 15px;
     text-align: left;
-    font-weight: 500;
+    font-weight:500;
     font-size: 12px;
     color: #fff;
     text-transform: uppercase;
+    margin-right:20% ;
+    
   }
   td{
-    padding: 15px;
+    padding: 18px;
     text-align: left;
     vertical-align:middle;
     font-weight: 300;
-    font-size: 12px;
-    color: #fff;
+    font-size: 15px;
+    color:darkred;
     border-bottom: solid 1px rgba(255,255,255,0.1);
+   
   }
-  
+  /* #viewfeedback{
+    margin-left: 50%;
+  } */
   
   /* demo styles */
   

@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-   <!-- <---------------------------------------------------------------header----------------------------------------------------------------------------------->  -->
+   <!-- <---------------------------------------------------------------header----------------------------------------------------------------------------------->  
 <header>
   <div class="header-container">
     <a href="/" class="logo">
@@ -42,47 +42,57 @@
 </header>
 
 
+<!-- <---------------------------------------------------------------alert----------------------------------------------------------------------------------->  
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="p">Your message here</p>
+  </div>
+</div>
 
 
 
-  
 
 
+
+<a href="viewfeedback.html"><button class="btnse">View Feedbacks</button></a>
 <form class="form">
-    <input placeholder="Please give Driver rating Between 1 to 5 " class="input" type="number">
-    <input placeholder="Please give  SERVICE rating Between 1 to 5 " class="input" type="number">
-    <input placeholder="Please give  Overall rating Between 1 to 5 " class="input" type="number">
-    <input placeholder="Please give valuable feedback all about our services" class="input" type="text">
-    <input placeholder="Please enter date and time" class="input" type="datetime-local">
+     <input placeholder="Please give BusId " class="input" id="busId" type="number">
+    <input placeholder="Please give Driver rating Between 1 to 5 " class="input" id="Driver" type="number">
+    <input placeholder="Please give  SERVICE rating Between 1 to 5 " class="input" id="Service"type="number">
+    <input placeholder="Please give  Overall rating Between 1 to 5 " class="input" id="Overall"type="number">
+    <input placeholder="Please give valuable feedback all about our services" class="input"id="Feedback" type="text">
+    <input placeholder="Please enter date and time" class="input" id="Date" type="text">
     
 </form>
-<button type="submit" class="btnse">Give Feedback</button>
-<a href="viewfeedback.html"><button class="btnse">View Feedbacks</button></a>
+<button type="submit" class="btnse" onclick="AddFeedback()">Give Feedback </button>
+
 
 
 
 
 <form class="form">
-  <input placeholder="Please give feedBackId " class="input" type="number">
-  <input placeholder="Please give Driver rating Between 1 to 5 " class="input" type="number">
-  <input placeholder="Please give  SERVICE rating Between 1 to 5 " class="input" type="number">
-  <input placeholder="Please give  Overall rating Between 1 to 5 " class="input" type="number">
-  <input placeholder="Please give valuable feedback all about our services" class="input" type="text">
-  <input placeholder="Please enter date and time" class="input" type="datetime-local">
+  <input placeholder="Please give feedBackId " class="input" id="feedBackId1" type="number">
+  <input placeholder="Please give Driver rating Between 1 to 5 " class="input" id="Driver1"type="number">
+  <input placeholder="Please give  SERVICE rating Between 1 to 5 " class="input"id="Service1" type="number">
+  <input placeholder="Please give  Overall rating Between 1 to 5 " class="input" id="Overall1"type="number">
+  <input placeholder="Please give valuable feedback all about our services" class="input" id="Feedback1"type="text">
+  <input placeholder="Please enter date and time" class="input"id="Date1" type="text">
    
 </form>
-<button type="submit" class="btnse">Update Feedback</button>
+<button type="submit" class="btnse" onclick="UpdateFeedback()">Update Feedback</button>
 
 
 
 
 
 <form class="form">
-  <input placeholder="Please give feedBackId" class="input" type="number">
+  <input placeholder="Please give feedBackId" class="input"id="feedBackId2" type="number">
  
    
 </form>
-<button type="submit" class="btnse">Delete Feedback</button>
+<button type="submit" class="btnse" onclick="deleteRecord()">Delete Feedback</button>
 
 
 
@@ -130,7 +140,7 @@
 
 
 
-
+<!-- <---------------------------------------------------------------Footer----------------------------------------------------------------------------------->  
 
 
 <footer>
@@ -200,7 +210,7 @@
   </body>
   </html>
   
-      <!-- Adding Bootstrap CDN - Popper JS -->
+      <!-- Adding Bootstrap CDN-->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

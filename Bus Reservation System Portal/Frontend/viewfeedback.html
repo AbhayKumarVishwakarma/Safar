@@ -10,8 +10,8 @@
     
     <title>Document</title>
 </head>
-<body>
-   <!-- <---------------------------------------------------------------header----------------------------------------------------------------------------------->  -->
+<body onload="f1()">
+   <!-- <---------------------------------------------------------------header----------------------------------------------------------------------------------->  
 <header>
   <div class="header-container">
     <a href="/" class="logo">
@@ -43,8 +43,8 @@
 </header>
 
 
-
-<section>
+ <!-- <---------------------------------------------------------------Table----------------------------------------------------------------------------------->  
+<section >
     <!--for demo wrap-->
   
         <h1>View Feedbacks &#128578</h1>
@@ -59,14 +59,15 @@
             <th>service Rating</th>
             <th>overall Rating</th>
             <th>comments</th>
-            <th>feedback Date and Time</th>
+            <th>BusName</th>
+            <th>UserName</th>
           </tr>
         </thead>
       </table>
     </div>
     <div class="tbl-content">
         <table cellpadding="0" cellspacing="0" border="0">
-          <tbody>
+          <tbody id="viewfeedback">
         </tbody>
     </table>
   </div>
@@ -160,7 +161,7 @@
   </body>
   </html>
   
-      <!-- Adding Bootstrap CDN - Popper JS -->
+      <!-- Adding Bootstrap CDN --->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
