@@ -1,15 +1,26 @@
+async function FetchedAllData() {
+    try {
+        let fetch_todo_request = await fetch(`http://localhost:8999/safar/admin/user/all?key=safar123`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
 
-
-fetch("http://localhost:8999/safar/admin/user/all?key=safar123")
-    .then((res) => res.json())
-    .then((data) => displayTable(data))
-    .catch((err) => alert(err))
-
-function displayErr(err) {
-    document.querySelector("h2").innerHTML = err;
+        if (fetch_todo_request.ok) {
+            let all_data = await fetch_todo_request.json()
+            console.log(all_data)
+            ShowData(all_data)
+        }
+    }
+    catch (error) {
+        console.log(error)
+    }
 }
 
-function displayTable(arr) {
+FetchedAllData()
+
+function ShowData(arr) {
 
     arr.forEach((elem) => {
         let row = document.createElement("tr")
@@ -27,21 +38,10 @@ function displayTable(arr) {
         let td6 = document.createElement("td")
         td6.innerHTML = "********"
         let td7 = document.createElement("td")
-        td7.innerHTML = "Delete"
-        // td7.style.width = 100%
-        td7.style.background
-        
-        
-        
-        
-        
-        
-        Color = "red"
 
-        row.append(td1, td2, td3, td4, td5, td6, td7)
+        row.append(td1, td2, td3, td4, td5, td6)
 
         document.querySelector("tbody").append(row)
     })
-
 
 }
