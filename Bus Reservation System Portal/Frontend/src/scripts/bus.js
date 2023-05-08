@@ -1,42 +1,40 @@
 let busid = localStorage.getItem("busid");
 
-let url = "https://6385feaa875ca3273d4cccf8.mockapi.io/ItsNix";
-let bus;
+let url = "http://localhost:8999/safar/bus/" + busid;
+let bus = null;
 
-async function fetchData(){
-    try{
-         let res = await fetch(url);
-         let out = await res.json();
 
-         out.forEach(element => {
-            if(element.busId == busid) bus = element;
-            
-         });
+fetch(url)
+  .then(response => response.json())
+  .then(json => {
+    bus = json;
 
-         console.log(bus);
+    fetchData();
+  })
+  .catch(error => {
+    console.error('Error fetching data: ', error);
+  });
 
-         document.getElementById("driver").innerHTML += bus.driverName;
-         document.getElementById("from").innerHTML += bus.routeFrom;
-         document.getElementById("to").innerHTML += bus.routeTo;
-         document.getElementById("date").innerHTML += bus.busJourneyDate;
-         document.getElementById("arrival").innerHTML += bus.arrivalTime;
-         document.getElementById("departure").innerHTML += bus.departureTime;
-         document.getElementById("seats").innerHTML += bus.availableSeats;
-         document.getElementById("fare").innerHTML += bus.fare;
-         document.getElementById("name").innerHTML += bus.busName;
-         
-    } catch(error){
-        console.log(error);
-    }
+
+function fetchData(){
+    document.getElementById("driver").innerHTML += bus.driverName;
+    document.getElementById("from").innerHTML += bus.routeFrom;
+    document.getElementById("to").innerHTML += bus.routeTo;
+    document.getElementById("date").innerHTML += bus.busJourneyDate;
+    document.getElementById("arrival").innerHTML += bus.arrivalTime;
+    document.getElementById("departure").innerHTML += bus.departureTime;
+    document.getElementById("seats").innerHTML += bus.availableSeats;
+    document.getElementById("fare").innerHTML += bus.fare;
+    document.getElementById("name").innerHTML += bus.busName;
 }
-
-fetchData();
 
 
 document.querySelector("form").addEventListener("submit", save);
 
+
 function save(event){
     event.preventDefault();
+    console.log(bus)
 
     let rev = {
         "source" : bus.routeFrom,
@@ -47,6 +45,7 @@ function save(event){
 
     localStorage.setItem("rev", JSON.stringify(rev));
 
+    console.log(rev);
+
     window.location.href = "./payment.html";
 }
-

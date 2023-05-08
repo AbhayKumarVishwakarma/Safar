@@ -1,4 +1,4 @@
-let url = "https://6385feaa875ca3273d4cccf8.mockapi.io/ItsNix";
+let url = "http://localhost:8999/safar/bus/all";
 let buttons = null;
 
 async function fetchData(){
