@@ -1,0 +1,244 @@
+header {
+    background-color:black;
+    color: #fff;
+    /* padding: 10px 0; */
+    text-align: center;
+    width: 100%;
+    
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+     /* max-width: 1000px;  */
+    /* margin: 0 auto; */
+    width: 80%;
+    
+  }
+  
+  .logo img {
+    /* max-width: 100%; */
+    width: 40%;
+    margin-right:20%;
+    margin-bottom: 0%;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    position: relative;
+    margin-right: 30px;
+    margin-top: 2%;
+  }
+  
+  nav ul li a {
+    display: block;
+    color:white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  nav ul li:hover > a {
+    color: #d43f3a
+  }
+  
+  nav ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    visibility: hidden;
+  }
+  
+  nav ul ul li {
+    display: block;
+    width: 200px;
+    margin: 0;
+  }
+  
+  nav ul ul li a {
+    color: #333;
+    padding: 10px;
+  }
+  
+  nav ul ul li:hover > a {
+    color:  #d43f3a
+  }
+  
+  nav ul li:hover > ul {
+    visibility: visible;
+  }
+  
+/* <=====================================================form===============================================================> */
+
+
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background: linear-gradient(to bottom, #0077be, #3b8df2);
+    border-radius: 10px;
+    overflow: hidden;
+    /* perspective: 1000px; */
+    transform-style: preserve-3d;
+    transform: rotateX(-10deg);
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    animation: form-animation 0.5s ease-in-out;
+  }
+  
+  @keyframes form-animation {
+    from {
+      transform: rotateX(-30deg);
+      opacity: 0;
+    }
+  
+    to {
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+  }
+  
+  .input {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    color: rgb(255, 255, 255);
+    border: 2px solid #3b8df2;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  
+  .input::placeholder {
+    color: #fff;
+  }
+  
+  .input:hover,
+  .input:focus {
+    border-color: #3b8df2;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05) rotateY(20deg);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    outline: none;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3b8df2;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform: rotateX(-10deg);
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  
+  button:hover {
+    background-color: #0077be;
+    font-size: 17px;
+    transform: scale(1.05) rotateY(20deg) rotateX(10deg);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  
+
+
+
+
+
+
+
+
+  .btnse{
+margin-bottom: 1%;
+margin-top:1% ;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+/* <????????????????????????????????footer??????????????????????????????????????????????????????????????????> */
+  footer {
+    background-color: rgb(26,35,47);
+    
+  }
+  .row{
+   margin-left:18%;
+  
+  }
+  .col-md-4{
+    margin-left:-17%;
+   
+  }
+  
+  footer h4 {
+    color:white;
+    font-size: 20px;
+    margin-bottom: 2%;
+    margin-top: 5%;
+  }
+  
+  footer p {
+    color: white;
+    
+    margin-bottom:-1% ;
+  }
+  
+  footer ul li {
+    color: white;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  footer ul li i {
+    color: white;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  footer ul.social-links li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  footer ul.social-links li a {
+    color: white;
+    font-size: 18px;
+  }
+  
+  footer ul.social-links li a:hover {
+    color: #e83e8c;
+  }
+  
+  
+  
