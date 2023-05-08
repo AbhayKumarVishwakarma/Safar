@@ -1,3 +1,10 @@
+body{
+  background: lavenderblush;
+  background-size: cover;
+  height: 200vh;
+}
+
+
 table {
     border-collapse: collapse;
     width: 100%;
