@@ -6,9 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="src/styles/addBus.css">
+	<link rel="stylesheet" href="./src/styles/buttonsBuses.css">
+	<style>h1 {
+		font-size: 26px;
+		font-weight: bold;
+		text-align: center;
+		color: #4CAF50;
+		margin-top: 50px;
+	  }
+	  </style>
 </head>
 <body>
-    <h1>Add Bus</h1>
+	<div class="button-container">
+		<a href="busmenu.html"><button class="home-button"><img src="./src/images/adminHome.png" id="homeIcon">Home</button></a>
+		<button class="view-button">View Bus</button>
+		<button class="update-button">Update Bus</button>
+		<button class="delete-button">Delete Bus</button>
+	  </div>
+
+	  <h1>Congratulations! Your business is expanding...</h1>
+	  <h1>Fill this form to add new bus.</h1>
+
 	<form action="http://localhost:8999/safar/admin/bus/add?key=safar123" method="post">
 		<label for="busName">Bus Name:</label>
 		<input type="text" id="busName" name="busName" required><br><br>

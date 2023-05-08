@@ -82,3 +82,15 @@ async function updateBus(obj){
         alert(error);
     }
 }
+
+document.querySelector(".view-button").addEventListener("click",()=>{
+    window.location.href = "viewBus.html";
+})
+
+document.querySelector(".add-button").addEventListener("click",()=>{
+    window.location.href = "addBus.html";
+})
+
+document.querySelector(".delete-button").addEventListener("click",()=>{
+    window.location.href = "deleteBus.html";
+})
