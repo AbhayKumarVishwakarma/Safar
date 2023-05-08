@@ -1,4 +1,13 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 
+/* =-=--=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=- */
+
+section{
+    margin: auto;
+}
 
 .mainTable{
     width: 80%;
@@ -107,3 +116,7 @@ tbody tr:hover {
     text-align: right;
     padding-right: 45px
 }
+
+
+
+/* =---=--=-=-=-=-=--=--=  Footer =-=-=--=-=-=---=-=--=- */
