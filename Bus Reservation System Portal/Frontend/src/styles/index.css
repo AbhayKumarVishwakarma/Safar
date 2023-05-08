@@ -102,6 +102,8 @@ header {
     display: flex;
     flex-direction: column;
     margin: 0 15px;
+    margin-top: 12%;
+
   }
   
   .form-group label {
@@ -132,7 +134,7 @@ header {
     color: #ffffff;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 4%;
+    margin-top: 16%;
     margin-left: 2%;
   }
   
