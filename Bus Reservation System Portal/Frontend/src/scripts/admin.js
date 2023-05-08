@@ -1,6 +1,6 @@
 const bus = document.querySelector(".box1").addEventListener("click",()=>{
     console.log("I am bus");
-    window.location.href = "bus.html";
+    window.location.href = "busmenu.html";
 })
 
 const reservation = document.querySelector(".box2").addEventListener("click",()=>{
