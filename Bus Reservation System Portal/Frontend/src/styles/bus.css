@@ -1,0 +1,12 @@
+.checkmark{
+    width: 20px;
+}
+
+li{
+    display: flex;
+    align-items: center;
+}
+
+li span{
+    margin-left: 5px;
+}

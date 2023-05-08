@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus</title>
+    <link rel="stylesheet" href="./src/styles/bus.css">
+    <link rel="stylesheet" href="./src/styles/button1.css">
+</head>
+<body>
+    <section>
+        <div class="container" style="margin: 100px;">
+            <div class="bus">
+                <h3 id="name"></h3>
+                <p>Safar.com</p>
+
+                <ul>
+                    <li><img class="checkmark" src="./src/images/checkmark.png"> <span id="driver"><b>Driver Name:</b> </span></li>
+                    <li><img class="checkmark" src="./src/images/checkmark.png"> <span id="from"><b>From :</b> </span></li>
+                    <li><img class="checkmark" src="./src/images/checkmark.png"> <span id="to"><b>To:</b> </span></li>
+                    <li><img class="checkmark" src="./src/images/checkmark.png"> <span id="date"><b>Journey Date:</b> </span></li>
+                    <li><img class="checkmark" src="./src/images/checkmark.png"> <span id="arrival"><b>Arrival Time:</b> </span></li>
+                    <li><img class="checkmark" src="./src/images/checkmark.png"> <span id="departure"><b>Departure Time:</b> </span></li>
+                    <li><img class="checkmark" src="./src/images/checkmark.png"> <span id="seats"><b>Available Seats:</b> </span></li>
+                    <li><img class="checkmark" src="./src/images/checkmark.png"> <span id="fare"><b>Fare:</b> ₹ </span></li>
+                </ul>
+
+                <form >
+                    <label >Enter booking seats: </label>
+                    <input id="booked" type="number" required> <br> <br>
+
+                    <button type="submit">Book Reservation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+<script src="./src/scripts/bus.js"></script>

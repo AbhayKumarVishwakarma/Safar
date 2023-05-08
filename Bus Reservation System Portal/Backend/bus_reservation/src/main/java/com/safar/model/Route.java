@@ -20,8 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
@@ -47,12 +46,10 @@ public class Route {
     @OneToMany(mappedBy = "route", cascade = CascadeType.ALL)
     private List<Bus> busList = new ArrayList<>();
 
-	
 
-
-    
-    
-    
-    
-    
+    public Route(String routeFrom, String routeTo, Integer distance) {
+        this.routeFrom = routeFrom;
+        this.routeTo = routeTo;
+        this.distance = distance;
+    }
 }

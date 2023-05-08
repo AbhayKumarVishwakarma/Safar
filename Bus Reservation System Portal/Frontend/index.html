@@ -4,9 +4,373 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safar.com</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> 
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Document</title>
 </head>
 <body>
+   <!-- <---------------------------------------------------------------header----------------------------------------------------------------------------------->  
+<header>
+  <div class="header-container">
+    <a href="/" class="logo">
+      <img src="image\Pink Minimal Typography Logo  (1).png" alt="Safar Logo" >
+    </a>
+    <nav>
+      <ul>
+        <li class="bus"><a href="#">Bus</a></li>
+        <li class="cancel"><a href="#">Reservation</a></li>
+       
+            <li class="Mangage"><a href="#">Route</a> </li>
+        
+        
+        <li class="Help"><a href="\feedback.html">Feedback</a></li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+            <i class="fas fa-user-circle"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Admin Sign Up/login</a>
+            <a class="dropdown-item" href="#">User Sign Up/login</a>
+          </div>
+        </li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <!-- <---------------------------------------------------Search------------------------------------------------------------> 
+    <section class="search-buses">
+      
+    <div class="container">
+        <form class="search-form">
+          <div class="form-group">
+            <label for="source">From</label>
+            <input type="text" id="source" placeholder="Enter source city" required>
+            
+          </div>
+          <div class="form-group">
+            <label for="destination">To</label>
+            <input type="text" id="destination" placeholder="Enter destination city" required>
+          </div>
+          <div class="form-group">
+           
+            <label for="date">Onward Date</label>
+
+            <input  type="date" id="date"  required>
+          
+          </div>
+          <button type="submit" class="btnse">Search Buses</button>
+        </form>
+      </div>
+    </div>
+</section>
+<!-- Coupons Container -->
+<div class="position-relative">
+  <div class="holiday-coupon-container ">
+    <div class="float-left mr-4 ml-4">
+      <img src="https://i.postimg.cc/XYxVCYGb/holiday.png" alt="holiday_coupon">
+    </div>
+
+    <div class="holiday">
+      <div class="holiday1">SAVE UPTO RS 375 ON BUS TICKETS</div>
+      <div class="holiday2">Use code FIRST on App</div>
+    </div>
+  </div>
+</div>
+
+<!-- Cashback Container -->
+<div class="cashback-container ">
+  <div class="cash">
+    <div class="cash1">Travel on RTC and Save up to Rs 175</div>
+    <div><img src="https://i.postimg.cc/kG8J6N81/bus.png" alt="bus"></div>
+    <div class="text-mutedc">Pay using Amazon Pay</div>
+    <div class="text-mutedc">Use code : AABBC</div>
+  </div>
+
+  <div class="cash">
+    <div class="cash1">Cashback up to Rs 275 on bus tickets.</div>
+    <div><img src="https://i.postimg.cc/kg7JGb5s/holiday-cashback.png" alt="bus"></div>
+    <div class="text-mutedc">Limited Period Offer</div>
+    <div class="text-mutedc">Use code : CCDDEE</div>
+  </div>
+
+  <div class="cash">
+    <div class="cash1">Cashback up to Rs 275 on bus tickets.</div>
+    <div><img src="https://i.postimg.cc/d1htvc0K/amazon.png" alt="bus"></div>
+    <div class="text-mutedc">Pay using Amazon Pay</div>
+    <div class="text-mutedc">Limited Period Offer</div>
+  </div>
+</div>
+
+<!-- --------Introducing On-Time Guarantee Container -->
+
+
+<div class="on-time-guarantee">
+  
+  
+  <div class="pr-4">
+    <img  id="s"src="https://i.postimg.cc/xTDTr7DW/hero-ontime.png" alt="hero_ontime" width="80%">
+  </div>
+
+  <div>
+    <div>
+      <h2>Introducing On-Time Guarantee</h2>
+      <h4 class="text-muted font-weight-normal">Leave on time, everytime</h4>
+    </div>
+
+    <div class="d-flex pt-4 pb-4">
+      <p class="font-weight-light mr-3"><span><img src="https://i.postimg.cc/Z5Ym4zfD/tip-icon.png" height="23"></span> Look for buses with</p>
+      <p class="mr-3"><img src="https://i.postimg.cc/fyxsTzn1/otgText.png"></p>
+      <p class="font-weight-light mr-3">tag while booking your journey</p>
+    </div>
+
+    <div class="d-flex">
+      <div>
+        <h5 class="text-primary">Bus on time</h5>
+        <div class="font-weight-bold">Get 25% refund</div>
+<div class="text-muted1"><pre>If bus departure is   
+delayedby 30 mins  
+from boarding point.</pre></div>
+      </div>
+
+      <div>
+        <h5 class="text-primary">No bus cancellation</h5>
+        <div class="font-weight-bold">Get 150% refund</div>
+        <div class="text-muted1"><pre>Bus is cancelled without 
+an alternate arrangement.         
+</pre>
+          
+          
+
+        </div>
+      </div>
+
+      <div>
+        <h5 class="text-primary">Alternate assurance</h5>
+        <div class="font-weight-bold">Get 300% refund</div>
+        <div class="text-muted1"><pre>Bus breaks down with 
+no alternate arrangement within 6 hours.
+        </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<div class="track-my-bus">
+  <div id="flot">
+    <div >
+      <img src="https://i.postimg.cc/mkGxnvzj/tmb-img.png" alt="tmb_img">
+    </div>
+
+    <div class="dknow">
+      <h3>TRACK MY BUS - Smarter Way To Travel</h3>
+      <p class="text-muted">Track your bus with our ‘Track My Bus’ feature and know the exact location in real-time.Stay informed and keep your family informed!</p>
+      <button class="btnk">Know More</button>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="d-flex">
+    <div class="text-center">
+      <div class="text-muted">BUSES</div>
+      <h1 class="text-danger">10,000</h1>
+      <div class="text-muted">Total buses currently being tracked</div>
+    </div>
+
+    <div class="text-center">
+      <div class="text-muted">ROUTES</div>
+      <h1>60,000</h1>
+      <div class="text-muted">Total routes covered by live tracking</div>
+    </div>
+
+    <div class="text-center">
+      <div class="text-muted">USERS</div>
+      <h1>40,000</h1>
+      <div class="text-muted">Total users using Track My Bus feature</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="ios-android-container ">
+  <div>		<!-- Background Image Container -->
+    <div class="d">
+      <div>
+        <h3>CONVENIENCE ON-THE-GO.</h3>
+        <div class="w">
+          <p >Exclusive features on mobile include</p>
+          <p >redBus NOW - when you need a bus in the next couple of hours. Board a bus on its way.</p>
+          <p >Boarding Point Navigation - Never lose your way while travelling to your boarding point!</p>
+          <p >1-click Booking - Save your favourite payment options securely on redBus, and more.</p>
+          <p >Download the app.</p>
+          <p>Enter your mobile number below to download the redBus mobile app.</p>
+          <!-- SMS me the link -->
+          <form class="form">
+            <select class="form">
+              <option>+91</option>
+            </select>
+            <input class="form" type="text" placeholder="Enter your mobile number">
+           <br>
+             
+            
+            <button class="btns" type="submit">SMS ME THE LINK</button>
+          
+          </form>
+          <!-- Download redBus Application -->
+          <button class="btna"><i class="fab fa-apple"></i></button>
+          <button class="btna"><i class="fab fa-google-play"></i></button>
+        </div>
+      </div>
+
+      <div>
+
+
+
+
+        <img src="https://i.postimg.cc/TP4ftNJN/IOS-Android-device.png" alt="IOS_Android_device" width="420">
+      </div>
+    </div>
+  </div>
+</div>
+       
+        
+
+
+
+<div class="we-promise-container">
+  <div class="text-center ">
+    <img src="https://i.postimg.cc/QN5hqb9S/promise.png" alt="promise" width="85">
+    <h2 class="text-dark ">WE PROMISE TO DELIVER</h2>
+  </div>
+
+  <div class="text-center d-flex">
+    <div class="border ">
+      <div class="p-4"><img src="https://i.postimg.cc/wMKHptPh/maximum-choices.png" alt="maximum_choices" width="120"></div>
+      <div class="mb-5">MAXIMUM CHOICE</div>
+      <div class="text-muted">We give you the widest number of travel options across thousands of routes.</div>
+    </div>
+
+    <div class="border ">
+      <div class="p-4"><img src="https://i.postimg.cc/Y2mqs7V6/customer-care.png" alt="customer_care" width="91"></div>
+      <div class="mb-5">SUPERIOR CUSTOMER SERVICE</div>
+      <div class="text-muted">We put our experience and relationships to good use and are available to solve your travel issues.</div>
+    </div>
+
+    <div class="border">
+      <div class="p-4"><img src="https://i.postimg.cc/JnHmv3Tr/lowest-Fare.png" alt="lowest_Fare" width="120"></div>
+      <div class="mb-5">LOWEST PRICES</div>
+      <div class="text-muted">We always give you the lowest price with the best partner offers.</div>
+    </div>
+
+    <div class="border">
+      <div class="p-4"><img src="https://i.postimg.cc/k4LMgYVR/benefits.png" alt="benefits" width="120"></div>
+      <div class="mb-5">UNMATCHED BENEFITS</div>
+      <div class="text-muted">We take care of your travel beyond ticketing by providing you with innovative and unique benefits.</div>
+    </div>
+  </div>
+</div>
     
+
+
+
+<!-- <----------------------------------------app--------------------------------------------------------------------------------------------------> -->
+
+
+<div id="app">
+<h1>Download our App on Android or iPhone and get the best bus booking deals across India</h1>
+<div>
+  <img id="img1"src ="https://st.redbus.in/seo/icon_img/webp/play_store.webp">
+  
+  <img id="img2" src ="https://st.redbus.in/seo/icon_img/webp/app-store.webp">
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- <-----------footer----------------------------------------------------------------------------------------------------------------------------> -->
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h4>Book</h4>
+        <p>Bus Tickets</p>
+        <p>Bus Hire</p> 
+        <p>Tempo Traveller</p>
+        <p>Train Tickets</p>
+        <p>Cab Booking</p>
+      </div>
+      <div class="col-md-4">
+        <h4>About safarBus</h4>
+        <p>About Us</p>
+        <p>Contact Us</p> 
+        <p>Mobile Version</p>
+        <p>Agent Registration</p>
+        <p>Careers</p>
+      </div>
+
+      <div class="col-md-4">
+        <h4>Traveller Tools</h4>
+        <p>Track My Bus</p>
+        <p>Cancellation</p> 
+        <p>Print E Ticket</p>
+        <p>FAQ</p>
+        <p>Sitemap</p>
+      </div>
+      <div class="col-md-4">
+        <h4>Legal</h4>
+        <p>Terms & Conditions</p>
+        <p>Privacy Policy</p> 
+        <p>Cookie Policy</p>
+        
+      </div>
+
+      <div class="col-md-4">
+        <h4>Apps</h4>
+        <p>Redrail</p>
+        <p>Make My Trip App</p> 
+        <p>Make My Trip UAE</p>
+       
+      </div>
+      <div class="col-md-4">
+        <h4>Contact Us</h4>
+        <ul class="list-unstyled">
+          <li><i class=" fab fa fa-envelope"></i> support@safarbus.in</li>
+          <li><i class=" fab fa fa-phone"></i> 1800-123-123-123</li>
+          <li><i class=" fab fa fa-map-marker"></i>Safarbus Office, Bangalore</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h4>Follow Us</h4>
+        <ul class="list-unstyled social-links">
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
+
+	<!-- Adding Bootstrap CDN - Popper JS -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
