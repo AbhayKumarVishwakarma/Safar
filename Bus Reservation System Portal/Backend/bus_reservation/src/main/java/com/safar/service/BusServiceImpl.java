@@ -32,13 +32,19 @@ public class BusServiceImpl implements BusService{
         }
 
         //finding and checking route
-        Route route = routeRepo.findByRouteFromAndRouteTo(bus.getRouteFrom(),bus.getRouteTo());
+//        Route route = routeRepo.findByRouteFromAndRouteTo(bus.getRouteFrom(),bus.getRouteTo());
+
+        Route route = new Route(bus.getRouteFrom(),bus.getRouteTo(),bus.getRoute().getDistance());
         if(route==null) throw new BusException("Route is not valid");
+
+//        routeRepo.save(route);
+
+        //adding route for this new bus
+        bus.setRoute(route);
 
         //adding this new bus to the route
         route.getBusList().add(bus);
-        //adding route for this new bus
-        bus.setRoute(route);
+        
         //saving bus
         return busRepo.save(bus);
     }
@@ -55,11 +61,18 @@ public class BusServiceImpl implements BusService{
         }
         Bus existBus = bus1.get();
         //checking if bus scheduled or not , can be updated only if not scheduled
-        if(existBus.getAvailableSeats() != existBus.getSeats()) throw new BusException("Scheduled bus can't be updated");
+        //if(existBus.getAvailableSeats() != existBus.getSeats()) throw new BusException("Scheduled bus can't be updated");
 
         Route route = routeRepo.findByRouteFromAndRouteTo(bus.getRouteFrom(),bus.getRouteTo()); //finding and checking route => pending
 
-        if(route==null) throw new BusException("Route is not valid");
+//           if(route==null) throw new BusException("Route is not valid");
+        if(route == null){
+            Route route1 = new Route(bus.getRouteFrom(),bus.getRouteTo(),bus.getRoute().getDistance());
+            routeRepo.save(route1);
+            bus.setRoute(route1);
+            return busRepo.save(bus);
+        }
+        routeRepo.save(route);
         bus.setRoute(route);
         return busRepo.save(bus);
     }
@@ -76,8 +89,9 @@ public class BusServiceImpl implements BusService{
         if(bus.isPresent()){
             Bus existingBus = bus.get();
             //checking if current date is before journey date it means bus scheduled so can't delete / or seats are reserved or not
-            if(LocalDate.now().isBefore(existingBus.getBusJourneyDate()) && existingBus.getAvailableSeats()!=existingBus.getSeats())
+            if(LocalDate.now().isBefore(existingBus.getBusJourneyDate()) && existingBus.getAvailableSeats()!=existingBus.getSeats()){
                 throw new BusException("Can't delete scheduled and reserved bus.");
+            }
 
             busRepo.delete(existingBus);
             return existingBus;

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        #main {
+            width: 250px;
+            margin: 40px auto auto;
+            padding: 10px;
+            border-radius: 7px;
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        }
+
+        #otp_inp {
+            width: 90%;
+            font-size: large;
+            padding: 5px;
+        }
+
+        #sub_inp {
+            margin: 20px auto;
+            width: 50%;
+            font-size: large;
+            padding: 5px;
+            border: 0px;
+            background-color: rgb(57, 212, 43);
+            border-radius: 11px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <h1>OTP</h1>
+        <form action="">
+            <input type="number" name="" id="otp_inp" placeholder="Enter OTP" required maxlength="4">
+            <input type="submit" value="Submit" id="sub_inp">
+        </form>
+    </div>
+</body>
+
+</html>
+<script>
+
+    let submit = document.querySelector("form")
+    submit.addEventListener("submit", (e) => {
+        e.preventDefault()
+        let input_value = document.querySelector("#otp_inp")
+        if (input_value.value === "1234") {
+            alert("Paymet successful")
+
+            // Delete from cart
+            
+            let CartBaseURL = `https://lame-hammer-server3.onrender.com/cartItem`;
+
+            async function getCartData() {
+                try {
+                    let res = await fetch(CartBaseURL)
+                    let cartData = await res.json()
+                    loopArray(cartData)
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+            getCartData()
+
+            function loopArray(cartData) {
+                cartData.forEach((item) => {
+                    placedOrder(item)
+                    deleteFromCartPage(item.id)
+                })
+            }
+
+            async function placedOrder(item) {
+                try {
+                    let res = await fetch(`https://lame-hammer-server3.onrender.com/order`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type" : "application/json"
+                        },
+                        body: JSON.stringify(item)
+                    })
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+
+            async function deleteFromCartPage(id) {
+                try {
+                    let res = await fetch(`${CartBaseURL}/${id}`, {
+                        method: "DELETE"
+                    })
+                    if (res.ok) {
+                        location.href = "index.html"
+                    }
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+
+        }
+        else {
+            alert("Wrong OTP")
+        }
+    })
+
+
+</script>

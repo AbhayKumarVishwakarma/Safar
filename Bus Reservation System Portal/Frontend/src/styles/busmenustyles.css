@@ -18,9 +18,7 @@ body>h1{
     padding: 50px;
     margin: auto;
 }
- .box3{
-  grid-column-end: span 2;
-} 
+
 .box h2 {
     position: absolute;
     bottom: 0;
@@ -48,7 +46,7 @@ body>h1{
   }
 
   .box2 {
-    background: url(../images/reservation.jpg) no-repeat center aquamarine;
+    background: url(../images/updateBus.png) no-repeat center aquamarine;
     background-size: contain;
     border: 5px solid white;
     filter: invert(1);
@@ -56,13 +54,13 @@ body>h1{
   
   
   .box3 {
-    background: url(../images/route.jpg) no-repeat center teal;
+    background: url(../images/deleteBus.png) no-repeat center teal;
     background-size: contain;
     filter: drop-shadow(2px 4px 6px black);
   }
 
   .box4 {
-    background: url(../images/feedback.jpg) no-repeat center sienna;
+    background: url(../images/viewMore.png) no-repeat center sienna;
     background-size: contain;
     filter: invert(1);
     border: 5px solid white;
@@ -81,6 +79,5 @@ body>h1{
     transform: scale(1.03);
   }
   
-  
 
-  
+ 
