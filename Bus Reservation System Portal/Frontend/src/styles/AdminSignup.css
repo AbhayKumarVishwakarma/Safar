@@ -1,0 +1,191 @@
+#nav {
+    width: 73%;
+    margin: auto;
+}
+#nav>.nav1 {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+#nav>.nav1>#nav1-img>img {
+    width: 70%;
+}
+#nav>.nav1>#nav1-img2 {
+    margin: auto;
+
+    width: 20%;
+
+}
+#nav>.nav1>#nav1-img2>img {
+    width: 13%;
+    margin: auto 7px;
+}
+#nav>.nav1>#nav1-3 {
+    height: 30px;
+    width: 27%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#nav>.nav1>#nav1-3>#b1 {
+    border-radius: 7px;
+    background-color: royalblue;
+    color: white;
+    border: 0px;
+    padding: 4px 13px;
+}
+#nav>.nav1>#nav1-3>#b2 {
+    border-radius: 7px;
+    background-color: rgb(84, 74, 74);
+    color: white;
+    border: 0px;
+    padding: 4px 18px;
+}
+#nav>.nav1>#nav1-3>#b3 {
+    background-color: white;
+    border: 0px;
+    border-left: 1px solid rgb(143, 130, 130);
+    padding: 4px 8px;
+}
+
+
+#nav2 {
+    width: 100%;
+    display: flex;
+    color: white;
+    background-color: mediumseagreen;
+}
+#nav2>div{
+    width: 73%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+#nav2>div>div{
+    width: 12%;
+    /* margin: auto; */
+    padding: 5px 0px;
+    font-size: large;
+    text-align: center;
+}
+
+#home,#b2,#b3,#recipes{
+    cursor: pointer;
+}
+
+
+
+/* ----- */
+
+#cont{
+    /* height: 700px;  */
+    width: 73%; 
+    /* border: 1px solid red;  */
+    margin:20px auto 100px;
+    display: flex;
+}
+#cont>.inform{
+    height: 200px;
+    width: 70%;
+    margin-top: 23px;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 10px;
+    /* border: 1px solid blue; */
+}
+#cont>.inform>div:nth-child(1){
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    text-align: center;
+    border-radius: 11px;
+    padding: 17px 0px 0px;
+    background-color: rgb(241, 238, 238);
+}
+#cont>.inform>div:nth-child(2){
+
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    text-align: center;
+    border-radius: 11px;
+    padding: 17px;
+}
+#cont>.inform>div:nth-child(3){
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    /* text-align: center; */
+    border-radius: 11px;
+    /* padding: 17px; */
+} 
+#cont>.inform>div>p{
+    text-align: center;
+    font-size: large;
+    color: dimgray;
+}
+#cont>.fillForm{
+    margin: 0px 0px 0px 40px;
+    /* border: 1px solid blue; */
+}
+#cont>.fillForm>.formCont{
+    display: flex;
+}
+#form{
+    margin-left: 40px;
+}
+.name{
+    display: flex;
+}
+input{
+    padding: 10px;
+    font-size: large;
+}
+
+
+
+/* ----- */
+
+#bottom2{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+#bImg{
+    margin: auto;
+    width: 100%;
+    background-color: rgb(225, 218, 218);
+}
+#bImg>div{
+    margin: auto;
+    width: 73%;
+}
+#bPara{
+    margin: auto;
+    width: 100%;
+    background-color: mediumseagreen;
+    color: white;
+}
+#bPara>.para1{
+    margin:0px auto 10px;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    font-size: 14px;
+}
+#bPara>.para1>div>a{
+    /* display: block;
+    margin: -5px 0px; */
+    color: white;
+}
+#bPara>.para1>div>h3{
+    margin-bottom: -0px;
+}
+#bPara>.para2{
+    margin:0px auto 10px;
+    width: 70%;
+    text-align: center;
+    font-size: 11px;
+}
+#bPara>.para2>p:nth-child(1){
+    margin: 20px auto -9px;
+}

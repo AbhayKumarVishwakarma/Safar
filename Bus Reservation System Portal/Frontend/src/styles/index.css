@@ -8,7 +8,7 @@ header {
     /* padding: 10px 0; */
     text-align: center;
     width: 100%;
-    
+    position: fixed;
   }
   
   .header-container {
