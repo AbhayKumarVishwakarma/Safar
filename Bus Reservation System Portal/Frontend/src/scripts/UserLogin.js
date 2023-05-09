@@ -71,13 +71,17 @@
             });
     
             const out = await res.json();
+            console.log(out)
             if(res.ok){
+                // console.log(res)
+                localStorage.setItem("userid", out.userID);
+                localStorage.setItem("userkey", out.uuid);
                 alert("User Logged-in successfully!")
             setTimeout(function() {
                 window.location.href = "index.html";
               }, 2000); 
             }
-            
+            // console.log(out)
     
         } catch (error) {
             //showing alert for error

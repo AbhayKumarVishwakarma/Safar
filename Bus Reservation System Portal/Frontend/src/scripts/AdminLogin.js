@@ -14,6 +14,7 @@
             "email":pEmail,
             "password":pPassword
         }
+        console.log(obj)
         // let flag = "no";
         // login.forEach(function (element, index) {
         //     if (element.pEmail === pObj.pEmail && element.pPassword === pObj.pPassword) {

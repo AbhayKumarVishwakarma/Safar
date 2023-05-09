@@ -10,15 +10,15 @@ const reservation = document.querySelector(".box2").addEventListener("click",()=
 
 const route = document.querySelector(".box3").addEventListener("click",()=>{
     console.log("I am route");
-    window.location.href = "route.html";
+    window.location.href = "adminRoute.html";
 })
 
 const feedback = document.querySelector(".box4").addEventListener("click",()=>{
     console.log("I am feedback");
-    window.location.href = "feedback.html";
+    window.location.href = "adminFeedback.html";
 })
 
 const user = document.querySelector(".box5").addEventListener("click",()=>{
     console.log("I am user");
-    window.location.href = "user.html";
+    window.location.href = "adminUser.html";
 })
