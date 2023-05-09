@@ -68,9 +68,8 @@ async function DeleteTodo(id) {
       })
       if (delete_request.ok) {
         alert(`Route id ${id} deleted successfully`)
-        FetchedAllData()
       }
-  
+      window.location.href = "./adminRoute.html"
     } catch (error) {
   
     }
