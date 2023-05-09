@@ -69,3 +69,15 @@ data.forEach((el,ind)=>{
     document.querySelector("tbody").append(tr)
 })
 }
+
+document.querySelector(".update-button").addEventListener("click",()=>{
+    window.location.href = "updateBusForm.html";
+})
+
+document.querySelector(".add-button").addEventListener("click",()=>{
+    window.location.href = "addBus.html";
+})
+
+document.querySelector(".delete-button").addEventListener("click",()=>{
+    window.location.href = "deleteBus.html";
+})

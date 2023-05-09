@@ -1,22 +1,116 @@
+*{
+  margin: 0%;
+  padding: 0%;
+}
+ body{
+    background-color:wheat;
+} 
+header {
+    background-color:black;
+    color: #fff;
+    /* padding: 10px 0; */
+    text-align: center;
+    width: 100%;
+    
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+     /* max-width: 1000px;  */
+    /* margin: 0 auto; */
+    width: 80%;
+    
+  }
+  
+  .logo img {
+    /* max-width: 100%; */
+    width: 40%;
+    margin-right:20%;
+    margin-bottom: 0%;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    position: relative;
+    margin-right: 30px;
+    margin-top: 2%;
+  }
+  
+  nav ul li a {
+    display: block;
+    color:white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  nav ul li:hover > a {
+    color: #d43f3a
+  }
+  
+  nav ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    visibility: hidden;
+  }
+  
+  nav ul ul li {
+    display: block;
+    width: 200px;
+    margin: 0;
+  }
+  
+  nav ul ul li a {
+    color: #333;
+    padding: 10px;
+  }
+  
+  nav ul ul li:hover > a {
+    color:  #d43f3a
+  }
+  
+  nav ul li:hover > ul {
+    visibility: visible;
+  }
+
+
+/* =-=--=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=- */
+
+ section{
+    margin: auto;
+}
 
 
 .mainTable{
     width: 80%;
+} 
+
+#table1{
+  margin-bottom: 30%;
+  margin-top: 5%;
 }
-
-
 table {
     border-spacing: 1;
     border-collapse: collapse;
-    background: #fff;
+    background:lightcoral;
     border-radius: 10px;
     overflow: hidden;
     width: 100%;
     margin: 0 auto;
-    position: relative
+     position: relative; 
+    margin-left:10% ;
 }
 
-table * {
+ table * {
     position: relative
 }
 
@@ -56,26 +150,26 @@ table td.r,table th.r {
 .table100-head th {
     font-family: OpenSans-Regular;
     font-size: 18px;
-    color: #fff;
+    color:aqua;
     line-height: 1.2;
     font-weight: unset
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f5f5f5
+    background-color:aqua
 }
 
 tbody tr {
     font-family: OpenSans-Regular;
     font-size: 15px;
-    color: gray;
+    color:black;
     line-height: 1.2;
     font-weight: unset
 }
 
 tbody tr:hover {
     color: #555;
-    background-color: #f5f5f5;
+    background-color:lawngreen;
     cursor: pointer
 }
 
@@ -100,10 +194,86 @@ tbody tr:hover {
 .column5 {
     width: 170px;
     text-align: right
-}
+} 
 
 .column6 {
     width: 222px;
     text-align: right;
     padding-right: 45px
 }
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ footer {
+    background-color: rgb(26,35,47);
+    
+    
+  }
+  .row{
+   margin-left:18%;
+  
+  }
+  .col-md-4{
+    margin-left:-17%;
+   
+  }
+  
+  footer h4 {
+    color:white;
+    font-size: 20px;
+    margin-bottom: 2%;
+    margin-top: 5%;
+  }
+  
+  footer p {
+    color: white;
+    
+    margin-bottom:-1% ;
+  }
+  
+  footer ul li {
+    color: white;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  footer ul li i {
+    color: white;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  footer ul.social-links li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  footer ul.social-links li a {
+    color: white;
+    font-size: 18px;
+  }
+  
+  footer ul.social-links li a:hover {
+    color: #e83e8c;
+  }
+  
+  
+  
+
+/* =---=--=-=-=-=-=--=--=  Footer =-=-=--=-=-=---=-=--=- */
+ 

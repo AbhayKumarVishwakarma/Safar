@@ -37,16 +37,14 @@ public class BusServiceImpl implements BusService{
         Route route = new Route(bus.getRouteFrom(),bus.getRouteTo(),bus.getRoute().getDistance());
         if(route==null) throw new BusException("Route is not valid");
 
-        routeRepo.save(route);
+//        routeRepo.save(route);
 
         //adding route for this new bus
         bus.setRoute(route);
 
         //adding this new bus to the route
         route.getBusList().add(bus);
-
-
-
+        
         //saving bus
         return busRepo.save(bus);
     }
