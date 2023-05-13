@@ -78,4 +78,3 @@ The bus reservation system portal is a web-based application that enables users 
  
 `http://localhost:8999/swagger-ui/`
 
-![Alt Text] (https://drive.google.com/file/d/1xv9Y3q_mDoaqscRdE3O0x_2nMmYewt9F/view?usp=sharing)
