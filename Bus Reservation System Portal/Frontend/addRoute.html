@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Add</title>
+    <link rel="stylesheet" href="src/styles/addRoute.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+          <a href="/" class="logo">
+            <img src="./src/images/logo.jpg" alt="Safar Logo" >
+          </a>
+          <nav>
+            <h1 style="align-items: center;">Welcome Admin</h1>
+          </nav>
+        </div>
+      </header>
+
+    <form id="formID" class="form">
+        <span class="signup" style="margin-bottom: 30px;">Add new Route</span>
+        <input id="from" type="text" placeholder="From" class="form--input" required>
+        <input id="to" type="text" placeholder="To" class="form--input" required>
+        <input id="dis" type="number" placeholder="Distance" class="form--input" required>
+        
+        <button class="form--submit">Submit</button>
+    </form>
+</body>
+
+</html>
+<script src="./src/scripts/addRoute.js"></script>

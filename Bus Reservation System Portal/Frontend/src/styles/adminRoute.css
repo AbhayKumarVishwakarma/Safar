@@ -29,6 +29,29 @@ header {
     margin-right:20%;
     margin-bottom: 0%;
   }
+
+/* ------------------------------ */
+
+
+#btn{
+    margin: 30px auto 0px;
+    /* background-color: red; */
+    width: 26%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.routebtn{
+    padding: 8px 20px;
+    border-radius: 7px;
+    font-size: 15px;
+    border: 0px;
+    background-color: red;
+    color: white;
+}
+.routebtn:hover{
+    cursor: pointer;
+}
   
 
 /* ------------------------------ */

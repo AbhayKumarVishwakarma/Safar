@@ -30,7 +30,7 @@ public class UserLoginServiceImpl implements UserLoginService{
         if(loggedInUser.isPresent()) throw new LoginException("User already Logged!");
 
         if(registeredUser.getPassword().equals(userLoginDTO.getPassword())) {
-            String key= "zxc@12"; // RandomString.make(6);
+            String key= "safar123"; // RandomString.make(6);
             CurrentUserSession currentUserSession = new CurrentUserSession();
             currentUserSession.setUserID(registeredUser.getUserID());
             currentUserSession.setUuid(key);

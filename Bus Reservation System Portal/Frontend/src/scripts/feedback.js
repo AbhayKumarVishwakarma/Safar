@@ -12,7 +12,7 @@ function AddFeedback(){
     const modal = document.querySelector(".modal");
 
     
-    fetch(`http://localhost:8999/safar/user/feedback/add/${busId}?key=asd@12`,{
+    fetch(`http://localhost:8999/safar/user/feedback/add/${busId}?key=safar123`,{
     
         method: "POST",
         headers: {
@@ -23,7 +23,7 @@ function AddFeedback(){
             "serviceRating": serviceRating,
             "overallRating": overallRating,
             "comments": comments,
-            "feedbackDateTime": feedbackDateTime,
+            "feedbackDateTime": feedbackDateTime
     
         })
     }).then(response => {
@@ -55,7 +55,7 @@ function AddFeedback(){
         let feedbackDateTime1=document.getElementById("Date1").value;
        
         
-        fetch(`http://localhost:8999/safar/user/feedback/update?key=asd@12`,{
+        fetch(`http://localhost:8999/safar/user/feedback/update?key=safar123`,{
         
             method: "PUT",
             headers: {
@@ -133,7 +133,7 @@ function AddFeedback(){
                     
                     let  id=document.getElementById("feedBackId2").value
                 
-                    fetch(`http://localhost:8999/safar/user/feedback/delete/${id}?key=asd@12`, {
+                    fetch(`http://localhost:8999/safar/user/feedback/delete/${id}?key=safar123`, {
                     
                     method: "DELETE"
                     

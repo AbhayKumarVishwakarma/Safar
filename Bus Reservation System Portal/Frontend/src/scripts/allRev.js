@@ -3,6 +3,8 @@ let key = localStorage.getItem("userkey");
 
 async function fetchData(){
     try{
+        console.log(id);
+        console.log(key);
         let res = await fetch("http://localhost:8999/safar/user/reservation/"+ id +"?key=" + key);
         let out = await res.json();
 
@@ -31,6 +33,7 @@ async function fetchData(){
 
               if(result){
                 deleteData(id);
+                window.location.href = "./allRev.html";
               }
             });
           });
@@ -42,7 +45,7 @@ async function fetchData(){
 
 async function deleteData(rid){
 
-    fetch("http://localhost:8999/safar/user/reservation/delete/"+ rid +"?key=" + "zxc@12", {
+    fetch("http://localhost:8999/safar/user/reservation/delete/"+ rid +"?key=" + key, {
         method: "DELETE",
         headers: {
             'Content-Type' : 'application/json',
