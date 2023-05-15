@@ -77,11 +77,13 @@
                 localStorage.setItem("userid", out.userID);
                 localStorage.setItem("userkey", out.uuid);
                 alert("User Logged-in successfully!")
-            setTimeout(function() {
-                window.location.href = "index.html";
-              }, 2000); 
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 2000); 
             }
-            // console.log(out)
+            else{
+                alert("Wrong email or password!")
+            }
     
         } catch (error) {
             //showing alert for error

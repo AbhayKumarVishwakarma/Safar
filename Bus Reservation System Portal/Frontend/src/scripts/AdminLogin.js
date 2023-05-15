@@ -75,9 +75,12 @@
             const out = await res.json();
             if(res.ok){
                 alert("Admin Logged-in successfully!")
-            setTimeout(function() {
+              setTimeout(function() {
                 window.location.href = "admin.html";
               }, 2000); 
+            }
+            else{
+                alert("Wrong email or password!")
             }
             
     
