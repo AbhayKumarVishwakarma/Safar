@@ -22,6 +22,10 @@ The bus reservation system portal is a web-based application that enables users 
     - Viewing list of available buses and booking a reservation
     - Only logged in user can access his reservations, profile updation and other features.
 
+## ER Diagrm
+<img src="https://github.com/AbhayKumarVishwakarma/Safar/blob/main/Bus%20Reservation%20System%20Portal/Frontend/src/images/ERDiagram.jpg" > </img>
+
+<br>
 
 ## Flow Chart
 <img src='https://github.com/AbhayKumarVishwakarma/Safar/blob/main/Bus%20Reservation%20System%20Portal/Frontend/src/images/safar2.png'></img>
