@@ -28,4 +28,6 @@ public class AdminController {
         Admin updatedAdmin = service.updateAdmin(admin, key);
         return new ResponseEntity<>(updatedAdmin, HttpStatus.OK);
     }
+    
+    
 }

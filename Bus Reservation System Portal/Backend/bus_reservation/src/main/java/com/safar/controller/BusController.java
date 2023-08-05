@@ -63,6 +63,11 @@ public class BusController {
         List<Bus> busList = busServ.viewBusByBusType(busType);
         return new ResponseEntity<>(busList,HttpStatus.OK);
     }
+    
+    @GetMapping("/bus/count")
+    public ResponseEntity<Integer> getBusCount(){
+    	Integer total = busServ.getTotalBusCount();    	return new ResponseEntity<>(total, HttpStatus.OK);
+    }
 }
 
 // format for sending post request

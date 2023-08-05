@@ -20,7 +20,6 @@ import com.safar.repository.UserRepository;
 
 import com.safar.exception.FeedBackException;
 import com.safar.model.Feedback;
-import com.safar.repository.UserRepository;
 
 @Service
 public class FeedbackServiceImpl implements FeedbackService {
@@ -47,16 +46,20 @@ public class FeedbackServiceImpl implements FeedbackService {
 		}
 		
 		User user = userDao.findById(loggedInUser.getUserID()).orElseThrow(()-> new UserException("User not found!"));
-
+		user.setTotalFeedBack(user.getTotalFeedBack() + 1);	
+		
 		Optional<Bus> busOptional = busDao.findById(busId);
 		if (busOptional.isEmpty()) {
 			throw new BusException("Bus is not present with Id: "+ busId);
 		}
-
-		feedBack.setBus(busOptional.get());
+		
+		user.getFeedbackList().add(feedBack);
+		feedBack.setBusId(busId);
+		feedBack.setUserId(user.getUserID());
 		feedBack.setUser(user);
 		feedBack.setFeedbackDateTime(LocalDateTime.now());
 		Feedback savedFeedback = fdao.save(feedBack);
+		userDao.save(user);
 
 		return savedFeedback;
 	}
@@ -76,9 +79,9 @@ public class FeedbackServiceImpl implements FeedbackService {
 		
 		if (opt.isPresent()) {
 			Feedback feedback2 = opt.get();
-			Optional<Bus> busOptional = busDao.findById(feedback2.getBus().getBusId());
+			Optional<Bus> busOptional = busDao.findById(feedback2.getBusId());
 			if(!busOptional.isPresent()) throw new FeedBackException("Invalid bus details!");
-			feedback.setBus(busOptional.get());
+			
 			feedback.setUser(user);
 			user.getFeedbackList().add(feedback);
 			feedback.setFeedbackDateTime(LocalDateTime.now());
@@ -115,14 +118,22 @@ public class FeedbackServiceImpl implements FeedbackService {
 		}
 
 		User user = userDao.findById(loggedInUser.getUserID()).orElseThrow(()-> new UserException("User not found!"));
+		user.setTotalFeedBack(user.getTotalFeedBack() - 1);
 		
 		Optional<Feedback> fedOptional = fdao.findById(feedbackId);
 		
 		if (fedOptional.isPresent()) {
 			Feedback existingFeedback = fedOptional.get();
+			user.getFeedbackList().remove(existingFeedback);
 			fdao.delete(existingFeedback);
+			userDao.save(user);
 			return existingFeedback;
 		}
 		throw new FeedBackException("No feedback found!");
+	}
+
+	@Override
+	public Integer getAllFeedBackCount() {
+		return fdao.findAll().size();
 	}
 }

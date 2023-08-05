@@ -119,4 +119,9 @@ public class RouteServiceImpl implements RouteService{
 			throw new RouteException("There is no route of this routeId : "+ routeID);
 
 	}
+
+	@Override
+	public Integer getRouteCount() {
+		return routerepository.findAll().size();
+	}
 }

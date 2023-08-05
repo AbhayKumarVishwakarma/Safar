@@ -2,6 +2,8 @@ package com.safar.model;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -35,13 +37,13 @@ public class Feedback {
 	private Integer overallRating;
 	
 	private String comments;
-
 	private LocalDateTime feedbackDateTime;
+	private Integer userId;
+	private Integer busId;
 	
+	@JsonIgnore
 	@OneToOne
 	private User user;
 	
-	@OneToOne
-	private Bus bus;
 
 }

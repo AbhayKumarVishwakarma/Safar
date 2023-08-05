@@ -129,4 +129,9 @@ public class BusServiceImpl implements BusService{
         return busListType;
     }
 
+	@Override
+	public Integer getTotalBusCount() {
+		return busRepo.findAll().size();
+	}
+
 }

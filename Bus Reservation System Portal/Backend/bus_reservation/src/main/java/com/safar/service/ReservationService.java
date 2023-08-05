@@ -22,5 +22,6 @@ public interface ReservationService {
     public Reservation deleteReservation(Integer rid, String key) throws ReservationException;
 
     public Reservation updateReservation(Integer rid, ReservationDTO dto, String key) throws ReservationException;
-
+    
+    public Integer getReservationCount();
 }

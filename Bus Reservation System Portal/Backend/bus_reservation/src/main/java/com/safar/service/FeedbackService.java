@@ -21,4 +21,6 @@ public interface FeedbackService {
 
 	public List<Feedback> viewFeedbackAll() throws FeedBackException;
 	
+	public Integer getAllFeedBackCount();
+	
 }

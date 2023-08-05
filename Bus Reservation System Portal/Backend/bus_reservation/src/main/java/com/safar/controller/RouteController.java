@@ -65,4 +65,8 @@ public class RouteController {
 		return new ResponseEntity<Route>(route,HttpStatus.OK);
 	}
 	
+	@GetMapping("/route/count")
+	public ResponseEntity<Integer> getRouteCount(){
+		return new ResponseEntity<>(routeService.getRouteCount(), HttpStatus.OK);
+	}
 }

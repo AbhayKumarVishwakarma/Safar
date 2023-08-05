@@ -3,6 +3,7 @@ package com.safar.controller;
 import com.safar.exception.AdminException;
 import com.safar.exception.UserException;
 import com.safar.model.User;
+import com.safar.model.UserDAO;
 import com.safar.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +22,21 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/user/register")
-    public ResponseEntity<User> registerUser(@Valid @RequestBody User user) throws UserException {
+    public ResponseEntity<User> registerUser(@Valid @RequestBody UserDAO userDAO) throws UserException {
+    	User user = new User();
+    	user.setFirstName(userDAO.getFirstName());
+    	user.setLastName(userDAO.getLastName());
+    	user.setMobile(userDAO.getMobile());
+    	user.setEmail(userDAO.getEmail());
+    	user.setPassword(userDAO.getPassword());
+    	
         User savedUser = userService.createUser(user);
         return new ResponseEntity<User>(savedUser, HttpStatus.CREATED);
     }
 
     @PutMapping("/user/update")
-    public  ResponseEntity<User> updateUser(@Valid @RequestBody User user, @RequestParam(required = false) String key) throws UserException {
-        User updatedUser = userService.updateUser(user, key);
+    public  ResponseEntity<User> updateUser(@Valid @RequestBody UserDAO userDAO, @RequestParam(required = false) String key) throws UserException {
+        User updatedUser = userService.updateUser(userDAO, key);
         return new ResponseEntity<User>(updatedUser, HttpStatus.OK);
     }
 
@@ -50,5 +58,9 @@ public class UserController {
         return new ResponseEntity<List<User>>(list, HttpStatus.OK);
 
     }
-
+    
+    @GetMapping("/user/count")
+    public ResponseEntity<Integer> getUserCount(){
+    	return new ResponseEntity<>(userService.getAllUserCount(), HttpStatus.OK);
+    }
 }

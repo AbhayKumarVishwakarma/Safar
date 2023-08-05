@@ -20,9 +20,6 @@ public class ReservationServiceImpl implements ReservationService{
     private ReservationRepository reservationRepository;
 
     @Autowired
-    private AdminRepository adminRepository;
-
-    @Autowired
     private CurrentAdminSessionRepository currentAdminSessionRepository;
 
     @Autowired
@@ -201,6 +198,12 @@ public class ReservationServiceImpl implements ReservationService{
         
         return reservation;
     }
+
+	@Override
+	public Integer getReservationCount() {
+		return reservationRepository.findAll().size();
+		
+	}
 
 
 }

@@ -60,6 +60,7 @@ public class Bus {
     @NotNull(message = "fare can't be null")
     private Integer fare;
 
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     private Route route;
 

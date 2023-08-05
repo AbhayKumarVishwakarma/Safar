@@ -13,6 +13,7 @@ public class CurrentAdminSession {
     @Id
     @Column(unique = true)
     private Integer adminID;
+    private String name;
     private String aid;
     private LocalDateTime time;
 }

@@ -5,6 +5,7 @@ import com.safar.exception.UserException;
 import com.safar.model.CurrentAdminSession;
 import com.safar.model.CurrentUserSession;
 import com.safar.model.User;
+import com.safar.model.UserDAO;
 import com.safar.repository.CurrentAdminSessionRepository;
 import com.safar.repository.CurrentUserSessionRepository;
 import com.safar.repository.UserRepository;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -33,10 +35,18 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User updateUser(User user, String key) throws UserException {
+    public User updateUser(UserDAO userDAO, String key) throws UserException {
         CurrentUserSession loggedInUser = userSessionRepository.findByUuid(key);
         if(loggedInUser == null)  throw new UserException("Please enter a valid key or login first!");
-        if(user.getUserID() != loggedInUser.getUserID()) throw new UserException("Invalid user details, please login for updating user!");
+        Optional<User> optional = userRepository.findById(loggedInUser.getUserID());
+        
+        if(optional.isEmpty()) throw new UserException("User Not found!!!");
+        User user = optional.get();
+        user.setEmail(userDAO.getEmail());
+        user.setFirstName(userDAO.getFirstName());
+        user.setLastName(userDAO.getLastName());
+        user.setMobile(userDAO.getMobile());
+        
         return userRepository.save(user);
     }
 
@@ -65,4 +75,9 @@ public class UserServiceImpl implements UserService{
         if(list.isEmpty())  throw new UserException("No users found!");
         return list;
     }
+
+	@Override
+	public Integer getAllUserCount() {
+		return userRepository.findAll().size();
+	}
 }

@@ -77,4 +77,8 @@ public class FeedbackController {
 		
 	}
 	
+	@GetMapping("/feedback/count")
+	public ResponseEntity<Integer> getFeedBackCount(){
+		return new ResponseEntity<Integer>(feedbackService.getAllFeedBackCount(), HttpStatus.OK);
+	}
 }

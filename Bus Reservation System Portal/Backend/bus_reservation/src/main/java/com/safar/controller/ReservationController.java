@@ -8,6 +8,7 @@ import com.safar.service.ReservationService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -60,5 +61,10 @@ public class ReservationController {
         List<Reservation> reservations = service.viewReservationByUerId(uid, key);
 
         return  new ResponseEntity<>(reservations, HttpStatus.FOUND);
+    }
+    
+    @GetMapping("/reservation/count")
+    public ResponseEntity<Integer> getReservationCount(){
+    	return new ResponseEntity<>(service.getReservationCount(), HttpStatus.OK);
     }
 }
